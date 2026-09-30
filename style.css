@@ -12,9 +12,9 @@
   --bg-primary: #070c18;
   --bg-secondary: #0e1628;
   --bg-tertiary: #16223b;
-  --bg-card: rgba(14, 22, 40, 0.78);
-  --bg-card-border: rgba(99, 140, 214, 0.2);
-  --bg-card-hover: rgba(22, 34, 59, 0.92);
+  --bg-card: rgba(14, 22, 40, 0.82);
+  --bg-card-border: rgba(99, 140, 214, 0.22);
+  --bg-card-hover: rgba(22, 34, 59, 0.94);
 
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
@@ -34,6 +34,7 @@
   --error-color: #f87171;
 
   /* Hero Section Tokens (Dark Mode) */
+  --active-hero-bg: url('./assets/background.jpg');
   --hero-overlay: linear-gradient(135deg, rgba(7, 12, 24, 0.76) 0%, rgba(14, 22, 40, 0.92) 100%);
   --hero-title-shadow: 0 4px 24px rgba(0, 0, 0, 0.85);
   --hero-subtitle-color: #cbd5e1;
@@ -41,6 +42,12 @@
   --hero-watermark-opacity: 0.16;
   --hero-watermark-blend: screen;
   --logo-filter: brightness(0) invert(1);
+
+  /* Section Overlays for Cinematic Backgrounds (Dark Mode) */
+  --about-overlay: linear-gradient(135deg, rgba(7, 12, 24, 0.91) 0%, rgba(14, 22, 40, 0.95) 100%);
+  --projects-overlay: linear-gradient(135deg, rgba(7, 12, 24, 0.91) 0%, rgba(14, 22, 40, 0.95) 100%);
+  --interactive-overlay: linear-gradient(135deg, rgba(7, 12, 24, 0.89) 0%, rgba(14, 22, 40, 0.94) 100%);
+  --contact-overlay: linear-gradient(135deg, rgba(7, 12, 24, 0.90) 0%, rgba(14, 22, 40, 0.95) 100%);
 
   /* Typography */
   --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
@@ -100,6 +107,12 @@
   --hero-watermark-blend: multiply;
   --logo-filter: brightness(0);
 
+  /* Section Overlays (Light Mode - Bright Ethereal Sheen) */
+  --about-overlay: linear-gradient(135deg, rgba(246, 248, 251, 0.92) 0%, rgba(235, 242, 236, 0.96) 100%);
+  --projects-overlay: linear-gradient(135deg, rgba(246, 248, 251, 0.93) 0%, rgba(241, 245, 249, 0.96) 100%);
+  --interactive-overlay: linear-gradient(135deg, rgba(246, 248, 251, 0.91) 0%, rgba(235, 242, 236, 0.95) 100%);
+  --contact-overlay: linear-gradient(135deg, rgba(246, 248, 251, 0.92) 0%, rgba(241, 245, 249, 0.96) 100%);
+
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.09);
   --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
@@ -108,8 +121,6 @@
 
 /* --------------------------------------------------------------------------
    2. Smooth Theme Transition Engine
-   Activated dynamically during switching to smoothly interpolate colors,
-   gradients, borders, and shadows without lagging normal hover events.
    -------------------------------------------------------------------------- */
 .theme-in-transition,
 .theme-in-transition *,
@@ -127,7 +138,6 @@
   transition-delay: 0s !important;
 }
 
-/* Default smooth transitions on key UI landmark elements */
 body,
 .site-header,
 .hero-section,
@@ -150,7 +160,8 @@ body,
 .form-textarea,
 .modal-dialog,
 .scene-study-card,
-.archival-poster-badge {
+.archival-poster-badge,
+.scenery-pill {
   transition: background-color var(--transition-normal),
               border-color var(--transition-normal),
               color var(--transition-normal),
@@ -183,7 +194,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Accessibility skip link */
 .skip-link {
   position: absolute;
   top: -50px;
@@ -246,7 +256,6 @@ button {
   text-align: center;
 }
 
-/* Section Header Typography */
 .section-header {
   margin-bottom: 3.5rem;
 }
@@ -293,6 +302,11 @@ button {
   transition: all var(--transition-normal);
   text-decoration: none;
   cursor: pointer;
+}
+
+.btn-sm {
+  font-size: 0.82rem;
+  padding: 0.45rem 0.9rem;
 }
 
 .btn-primary {
@@ -447,9 +461,7 @@ button {
   border-radius: var(--radius-full);
 }
 
-/* --------------------------------------------------------------------------
-   Theme Toggle Button (Silky Smooth Morphing Sun/Moon)
-   -------------------------------------------------------------------------- */
+/* Theme Toggle Button */
 .theme-toggle {
   position: relative;
   display: inline-flex;
@@ -491,7 +503,6 @@ button {
               opacity 0.35s ease;
 }
 
-/* Default Dark Mode: Sun icon active */
 :not([data-theme="light"]) .sun-icon {
   transform: rotate(0deg) scale(1);
   opacity: 1;
@@ -503,7 +514,6 @@ button {
   opacity: 0;
 }
 
-/* Light Mode: Moon icon active */
 [data-theme="light"] .sun-icon {
   transform: rotate(90deg) scale(0.3);
   opacity: 0;
@@ -515,7 +525,6 @@ button {
   filter: drop-shadow(0 0 4px rgba(2, 132, 199, 0.4));
 }
 
-/* Mobile Hamburger Toggle */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -538,23 +547,23 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   5. Hero Section (With hero2.png Backdrop & hero.png)
+   5. Hero Section (With hero2.png Backdrop & Scenery Switcher)
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
   min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
-  background-image: var(--hero-overlay), url('./assets/background.jpg');
+  background-image: var(--hero-overlay), var(--active-hero-bg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   padding: 5rem 0;
   border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
+  transition: background-image 0.5s ease;
 }
 
-/* hero2.png Typographic Poster Motif */
 .hero-watermark-layer {
   position: absolute;
   top: 0;
@@ -650,13 +659,14 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-stats {
   display: flex;
   gap: 2.2rem;
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
+  margin-bottom: 1.75rem;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -679,6 +689,74 @@ button {
   letter-spacing: 0.08em;
   color: var(--hero-stat-label);
   margin-top: 0.2rem;
+}
+
+/* Scenery Selector Bar in Hero Section */
+.scenery-selector-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  background: rgba(14, 22, 40, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+[data-theme="light"] .scenery-selector-bar {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.scenery-bar-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.scenery-pills-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.scenery-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+.scenery-pill:hover,
+.scenery-pill:focus-visible {
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+.scenery-pill.active {
+  background: var(--accent-primary);
+  color: #070c18;
+  border-color: var(--accent-primary);
+  font-weight: 600;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.scenery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px currentColor;
 }
 
 .hero-visual {
@@ -750,11 +828,15 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   6. About Section (With hi.gif & hero2.png Archival Cards)
+   6. About Section (Cinematic Backdrop: background4.jpg)
    -------------------------------------------------------------------------- */
 .about-section {
+  position: relative;
   padding: 6.5rem 0;
-  background-color: var(--bg-primary);
+  background-image: var(--about-overlay), url('./assets/background4.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -770,7 +852,7 @@ button {
   border: 1px solid var(--bg-card-border);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .bio-title {
@@ -813,7 +895,6 @@ button {
   display: block;
 }
 
-/* Archival Poster Badge (hero2.png) */
 .archival-poster-badge {
   display: flex;
   gap: 1.25rem;
@@ -874,13 +955,13 @@ button {
   margin-bottom: 0;
 }
 
-/* Living Cinematographic Scene Study Card (hi.gif) */
 .scene-study-card {
   background: var(--bg-card);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
   transition: all var(--transition-normal);
 }
 .scene-study-card:hover {
@@ -964,6 +1045,7 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
+  backdrop-filter: blur(10px);
   transition: all var(--transition-normal);
 }
 .pillar-card:hover {
@@ -1089,11 +1171,15 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   8. Featured Projects Section
+   8. Featured Projects Section (Cinematic Backdrop: background3.png)
    -------------------------------------------------------------------------- */
 .projects-section {
+  position: relative;
   padding: 6.5rem 0;
-  background-color: var(--bg-primary);
+  background-image: var(--projects-overlay), url('./assets/background3.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -1110,6 +1196,7 @@ button {
   padding: 1.85rem;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(10px);
   transition: all var(--transition-normal);
 }
 .project-card:hover {
@@ -1185,11 +1272,15 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   9. Interactive Component Container (With hi.gif in Player Screen)
+   9. Interactive Component Container (Cinematic Backdrop: background2.jpg)
    -------------------------------------------------------------------------- */
 .interactive-section {
+  position: relative;
   padding: 6.5rem 0;
-  background-color: var(--bg-secondary);
+  background-image: var(--interactive-overlay), url('./assets/background2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -1199,7 +1290,6 @@ button {
   gap: 3.5rem;
 }
 
-/* Filter Controls */
 .filter-controls-wrapper {
   display: flex;
   flex-direction: column;
@@ -1243,7 +1333,6 @@ button {
   border-color: var(--accent-primary);
 }
 
-/* Filtered Items Grid */
 .filtered-items-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1303,7 +1392,56 @@ button {
   font-family: var(--font-mono);
 }
 
-/* Player Console Component (Simulated Discman + Motion Screen) */
+/* Cinematography Still Card Styling */
+.still-card {
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
+.still-thumb-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #000;
+}
+
+.still-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+.still-card:hover .still-thumb-img {
+  transform: scale(1.06);
+}
+
+.still-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: rgba(7, 12, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #38bdf8;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+}
+
+.still-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Player Console Component */
 .player-console {
   background: linear-gradient(145deg, #0e1628, #070c18);
   border: 1px solid var(--bg-card-border);
@@ -1358,7 +1496,6 @@ button {
   color: var(--text-muted);
 }
 
-/* Visual Motion Screen Inside Disc Player */
 .player-visual-screen {
   position: relative;
   width: 100%;
@@ -1438,7 +1575,6 @@ button {
   color: var(--text-secondary);
 }
 
-/* Audio Visualizer */
 .player-visualizer {
   display: flex;
   align-items: flex-end;
@@ -1627,11 +1763,15 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   10. Contact / CTA Section
+   10. Contact / CTA Section (Cinematic Backdrop: background5.png)
    -------------------------------------------------------------------------- */
 .contact-section {
+  position: relative;
   padding: 6.5rem 0;
-  background-color: var(--bg-primary);
+  background-image: var(--contact-overlay), url('./assets/background5.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -1656,6 +1796,7 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
+  backdrop-filter: blur(10px);
   transition: all var(--transition-normal);
 }
 .contact-card:hover {
@@ -1709,6 +1850,7 @@ button {
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
 }
 
 .form-title {
@@ -1974,7 +2116,7 @@ button {
   background: var(--bg-secondary);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--radius-lg);
-  max-width: 580px;
+  max-width: 620px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
@@ -2057,6 +2199,13 @@ button {
   }
 
   .hero-stats {
+    justify-content: center;
+  }
+
+  .scenery-selector-bar {
+    align-items: center;
+  }
+  .scenery-pills-group {
     justify-content: center;
   }
 

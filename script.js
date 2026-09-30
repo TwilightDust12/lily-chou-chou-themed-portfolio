@@ -1,7 +1,7 @@
 /**
  * Lily Chou-Chou — The Ether Sanctuary
  * Vanilla Modern JavaScript (ES6+)
- * Accessible, Event-Driven, Scoped Architecture with Seamless Theme Engine
+ * Accessible, Event-Driven, Scoped Architecture with Seamless Theme & Scenery Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -118,14 +118,59 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     3. Interactive Component: Archive Filtering
+     3. Cinematic Horizon / Scenery Switcher
+     Supports backgrounds 1, 2, 3, 4, and 5 with persistence & live updates
+     ========================================================================== */
+  const sceneryPills = document.querySelectorAll('.scenery-pill');
+  const heroSceneryName = document.getElementById('hero-scenery-name');
+  const applyBgButtons = document.querySelectorAll('.apply-bg-btn');
+
+  const setHeroHorizon = (bgUrl, bgName) => {
+    document.documentElement.style.setProperty('--active-hero-bg', `url('${bgUrl}')`);
+    if (heroSceneryName && bgName) {
+      heroSceneryName.textContent = bgName;
+    }
+    sceneryPills.forEach(pill => {
+      const isMatch = pill.getAttribute('data-bg') === bgUrl;
+      pill.classList.toggle('active', isMatch);
+      pill.setAttribute('aria-checked', String(isMatch));
+    });
+    localStorage.setItem('ether-horizon-bg', bgUrl);
+    if (bgName) localStorage.setItem('ether-horizon-name', bgName);
+  };
+
+  sceneryPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const bgUrl = pill.getAttribute('data-bg');
+      const bgName = pill.getAttribute('data-name');
+      setHeroHorizon(bgUrl, bgName);
+    });
+  });
+
+  applyBgButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bgUrl = btn.getAttribute('data-bg');
+      const bgName = btn.getAttribute('data-name');
+      setHeroHorizon(bgUrl, bgName);
+      const heroSection = document.getElementById('hero');
+      if (heroSection) heroSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const savedHorizonBg = localStorage.getItem('ether-horizon-bg');
+  const savedHorizonName = localStorage.getItem('ether-horizon-name');
+  if (savedHorizonBg) {
+    setHeroHorizon(savedHorizonBg, savedHorizonName);
+  }
+
+  /* ==========================================================================
+     4. Interactive Component: Archive & Scenery Filtering
      ========================================================================== */
   const filterButtons = document.querySelectorAll('.filter-btn');
   const archiveCards = document.querySelectorAll('.interactive-card');
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update button active state & aria-pressed
       filterButtons.forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-pressed', 'false');
@@ -147,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     4. Interactive Component: Simulated Disc Player & Visualizer
+     5. Interactive Component: Simulated Disc Player & Visualizer
      ========================================================================== */
   const playerConsole = document.querySelector('.player-console');
   const ctrlPlay = document.getElementById('ctrl-play');
@@ -264,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     5. Interactive Component: FAQ / Lore Accordion
+     6. Interactive Component: FAQ / Lore Accordion
      ========================================================================== */
   const accordionTriggers = document.querySelectorAll('.accordion-trigger');
 
@@ -274,7 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const panelId = trigger.getAttribute('aria-controls');
       const panel = document.getElementById(panelId);
 
-      // Close all other accordions for clean single-expand experience
       accordionTriggers.forEach(otherTrigger => {
         if (otherTrigger !== trigger) {
           otherTrigger.setAttribute('aria-expanded', 'false');
@@ -284,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Toggle current panel
       trigger.setAttribute('aria-expanded', String(!isExpanded));
       if (panel) {
         panel.hidden = isExpanded;
@@ -293,14 +336,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     6. Liner Notes Modal Dialog
+     7. Liner Notes & Cinematography Modal Dialog
      ========================================================================== */
   const modalBackdrop = document.getElementById('track-modal');
   const modalTitle = document.getElementById('modal-title');
   const modalBodyContent = document.getElementById('modal-body-content');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalFooterClose = document.getElementById('modal-footer-close');
-  const openModalButtons = document.querySelectorAll('.open-modal-btn');
 
   const linerNotesData = {
     'glide': {
@@ -345,6 +387,47 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><strong>Texture:</strong> Sub-bass synthesis and celestial chorus</p>
         <p style="margin-top: 0.75rem;">An exploration of sensory saturation, capturing the experience of drowning in emotion until total peace is attained.</p>
       `
+    },
+    'bg1': {
+      title: 'Cinematography Study: Scene 01 — Verdant Solitude',
+      body: `
+        <p><strong>Asset:</strong> <code>assets/background.jpg</code> (3840 &times; 2160 UHD)</p>
+        <p style="margin-top: 0.75rem;"><strong>Cinematographer:</strong> Noboru Shinoda | <strong>Camera:</strong> Sony HDW-700 24P</p>
+        <p style="margin-top: 0.75rem;">Captured during golden hour in the rice paddies of Tochigi Prefecture. Shinoda pushed the digital camcorder exposure curve to create a radiant, overexposed sky while preserving hyper-saturated verdant greens. Hasumi stands solitary with his Discman, completely enveloped by Salyu's vocals.</p>
+        <p style="margin-top: 0.75rem; font-style: italic; color: var(--accent-primary);">Symbolism: Solitude transformed into spiritual communion via the Ether.</p>
+      `
+    },
+    'bg2': {
+      title: 'Cinematography Study: Scene 02 — Concert Sanctuary',
+      body: `
+        <p><strong>Asset:</strong> <code>assets/background2.jpg</code> (1280 &times; 720)</p>
+        <p style="margin-top: 0.75rem;"><strong>Lighting Key:</strong> Monochromatic CRT Phosphor Grid &bull; Obsidian Night</p>
+        <p style="margin-top: 0.75rem;">The defining moment where the virtual Ether sanctuary confronts physical reality. Hasumi stands beneath the towering stadium video screen displaying the glowing cathode-ray glyphs "Lily Chou-Chou". The shot explores the overwhelming scale of collective teenage longing in an anonymous metropolis.</p>
+      `
+    },
+    'bg3': {
+      title: 'Cinematography Study: Scene 03 — Wounded Autumn',
+      body: `
+        <p><strong>Asset:</strong> <code>assets/background3.png</code> (1280 &times; 720)</p>
+        <p style="margin-top: 0.75rem;"><strong>Palette:</strong> Desaturated Lilac, Earth Umber, Dusky Lavender</p>
+        <p style="margin-top: 0.75rem;">In stark contrast to the vivid green summer, this winter sequence depicts Hasumi in a duffle coat and school bag standing in harvested, furrowed earth. The sunset sky glows with melancholic pink and violet hues, visually framing the emotional wounds and loss of innocence.</p>
+      `
+    },
+    'bg4': {
+      title: 'Cinematography Study: Scene 04 — Rural Pathway',
+      body: `
+        <p><strong>Asset:</strong> <code>assets/background4.jpg</code> (1920 &times; 1080)</p>
+        <p style="margin-top: 0.75rem;"><strong>Style:</strong> Handheld Kinetic Tracking &bull; Overcast Daylight</p>
+        <p style="margin-top: 0.75rem;">A spontaneous, intimate tracking shot following Tsuda (Yu Aoi) and Hasumi walking home along a narrow asphalt country path. Tsuda playfully swings her feet and school bag, creating a fleeting moment of fragile happiness before tragedy ensues.</p>
+      `
+    },
+    'bg5': {
+      title: 'Cinematography Study: Scene 05 — The Celestial Antenna',
+      body: `
+        <p><strong>Asset:</strong> <code>assets/background5.png</code> (1920 &times; 1080)</p>
+        <p style="margin-top: 0.75rem;"><strong>Visual Motif:</strong> Prismatic Rainbow Flare &bull; Telecommunications Tower &bull; Kites</p>
+        <p style="margin-top: 0.75rem;">The soaring lattice antenna piercing a deep cerulean sky with vapor trails. Red geometric kites swoop around the mast while a circular chromatic aberration lens flare washes over the frame. Represents the physical transmitter of the Ether—sending and receiving invisible frequencies of human heartache.</p>
+      `
     }
   };
 
@@ -371,11 +454,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  openModalButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  // Delegate clicks for open-modal-btn (including dynamically rendered buttons)
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.open-modal-btn');
+    if (btn) {
       const trackKey = btn.getAttribute('data-track');
       openModal(trackKey);
-    });
+    }
   });
 
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
@@ -396,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     7. Contact Form Validation & Submission
+     8. Contact Form Validation & Submission
      ========================================================================== */
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
@@ -513,7 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     8. Footer Dynamic Year
+     9. Footer Dynamic Year
      ========================================================================== */
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) {

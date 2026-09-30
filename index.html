@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="The Ether — Personal Creative Portfolio of Philia. Inspired by the cinematography, ethereal soundscapes, and emotional resonance of Shunji Iwai's All About Lily Chou-Chou.">
-  <meta name="keywords" content="Lily Chou-Chou, The Ether, Philia, Personal Portfolio, Sound Design, Cinematography, Web Development, Ambient Music, Kokyuu, Glide, Shunji Iwai">
+  <meta name="keywords" content="Lily Chou-Chou, The Ether, Philia, Personal Portfolio, Sound Design, Cinematography, Web Development, Ambient Music, Kokyuu, Glide, Shunji Iwai, Noboru Shinoda">
   <meta name="author" content="Philia">
   <meta name="theme-color" content="#070c18">
   <title>The Ether | Philia — Personal Portfolio &amp; Lily Chou-Chou Archive</title>
@@ -129,6 +129,7 @@
           <p class="hero-subtitle">
             I am a creative developer, ambient sound designer, and digital archivist. Inspired by Shunji Iwai’s cinematic poetry, Noboru Shinoda’s evocative natural lighting, and the haunting melodies of Lily Chou-Chou, I build atmospheric web experiences that bring stillness to modern digital noise.
           </p>
+          
           <div class="hero-cta-group">
             <a href="#projects" class="btn btn-primary" aria-label="Explore featured portfolio pieces">
               <span>View Portfolio Pieces</span>
@@ -156,8 +157,70 @@
               <span class="stat-label">Lossless Ether Audio</span>
             </div>
             <div class="stat-card">
-              <span class="stat-value">100%</span>
-              <span class="stat-label">Semantic &amp; Accessible</span>
+              <span class="stat-value">5</span>
+              <span class="stat-label">Cinematic Horizons</span>
+            </div>
+          </div>
+
+          <!-- Interactive Scenery Switcher Widget (Switching between background 1, 2, 3, 4, 5) -->
+          <div class="scenery-selector-bar" role="region" aria-label="Select hero background scenery">
+            <span class="scenery-bar-label">Cinematic Horizon:</span>
+            <div class="scenery-pills-group" role="radiogroup" aria-label="Hero background scenery choices">
+              <button 
+                type="button" 
+                class="scenery-pill active" 
+                data-bg="./assets/background.jpg" 
+                data-name="Verdant Solitude (Summer Rice Field)" 
+                role="radio" 
+                aria-checked="true" 
+                aria-label="Scene 01: Verdant Solitude (Summer Rice Field)">
+                <span class="scenery-dot" style="background-color: #4ade80;" aria-hidden="true"></span>
+                <span>01. Verdant Field</span>
+              </button>
+              <button 
+                type="button" 
+                class="scenery-pill" 
+                data-bg="./assets/background2.jpg" 
+                data-name="Concert Sanctuary (The Glowing Screen)" 
+                role="radio" 
+                aria-checked="false" 
+                aria-label="Scene 02: Concert Sanctuary (The Glowing Screen)">
+                <span class="scenery-dot" style="background-color: #38bdf8;" aria-hidden="true"></span>
+                <span>02. Concert Screen</span>
+              </button>
+              <button 
+                type="button" 
+                class="scenery-pill" 
+                data-bg="./assets/background3.png" 
+                data-name="Wounded Autumn (Twilight Horizon)" 
+                role="radio" 
+                aria-checked="false" 
+                aria-label="Scene 03: Wounded Autumn (Twilight Horizon)">
+                <span class="scenery-dot" style="background-color: #c084fc;" aria-hidden="true"></span>
+                <span>03. Twilight Plain</span>
+              </button>
+              <button 
+                type="button" 
+                class="scenery-pill" 
+                data-bg="./assets/background4.jpg" 
+                data-name="Rural Pathway (Youth & Distance)" 
+                role="radio" 
+                aria-checked="false" 
+                aria-label="Scene 04: Rural Pathway (Youth & Distance)">
+                <span class="scenery-dot" style="background-color: #a3e635;" aria-hidden="true"></span>
+                <span>04. Rural Pathway</span>
+              </button>
+              <button 
+                type="button" 
+                class="scenery-pill" 
+                data-bg="./assets/background5.png" 
+                data-name="The Celestial Antenna (Transmission Tower)" 
+                role="radio" 
+                aria-checked="false" 
+                aria-label="Scene 05: The Celestial Antenna (Transmission Tower)">
+                <span class="scenery-dot" style="background-color: #60a5fa;" aria-hidden="true"></span>
+                <span>05. Transmission Tower</span>
+              </button>
             </div>
           </div>
         </div>
@@ -174,7 +237,7 @@
               loading="eager">
             <div class="now-playing-badge" aria-hidden="true">
               <span class="pulse-indicator"></span>
-              <span class="now-playing-text">Atmosphere: <strong>Glide (Kokyuu Master Mix)</strong></span>
+              <span class="now-playing-text">Atmosphere: <strong id="hero-scenery-name">Verdant Solitude (Summer Rice Field)</strong></span>
             </div>
           </div>
         </div>
@@ -183,7 +246,7 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- 3. CORE CONTENT SECTION: ABOUT ME                       -->
+    <!-- 3. CORE CONTENT SECTION: ABOUT ME (With background4.jpg)-->
     <!-- ======================================================= -->
     <section class="about-section" id="about" aria-labelledby="about-heading">
       <div class="container">
@@ -426,6 +489,7 @@
 
     <!-- ======================================================= -->
     <!-- 3. CORE CONTENT SECTION: FEATURED PROJECTS GRID         -->
+    <!-- (With background3.png)                                  -->
     <!-- ======================================================= -->
     <section class="projects-section" id="projects" aria-labelledby="projects-heading">
       <div class="container">
@@ -611,6 +675,7 @@
 
     <!-- ======================================================= -->
     <!-- 4. INTERACTIVE COMPONENT CONTAINER                      -->
+    <!-- (With background2.jpg Concert Backdrop)                 -->
     <!-- ======================================================= -->
     <section class="interactive-section" id="interactive" aria-labelledby="interactive-title">
       <div class="container">
@@ -618,13 +683,13 @@
           <span class="section-tag">Interactive Terminal</span>
           <h2 id="interactive-title" class="section-title">The Ether Sound Console &amp; Dynamic Archive</h2>
           <p class="section-lead">
-            Interact with our live simulation station. Filter portfolio entries, audition simulated audio playback with motion vignettes, and open interactive FAQ dialogues.
+            Interact with our live simulation station. Filter portfolio entries, audition simulated audio playback with motion vignettes, and inspect archival film stills.
           </p>
         </div>
 
         <div class="interactive-component-container">
           
-          <!-- Component 1: Category Filter Controls -->
+          <!-- Component 1: Category Filter Controls (Enhanced with 'scenery' tab) -->
           <div class="filter-controls-wrapper" role="group" aria-label="Filter portfolio and archive entries">
             <span class="filter-label">Filter Archival Pieces:</span>
             <div class="filter-btn-group">
@@ -632,10 +697,11 @@
               <button type="button" class="filter-btn" data-filter="sound" aria-pressed="false">Sound &amp; Audio</button>
               <button type="button" class="filter-btn" data-filter="visual" aria-pressed="false">Visual &amp; Film</button>
               <button type="button" class="filter-btn" data-filter="code" aria-pressed="false">Web &amp; Code</button>
+              <button type="button" class="filter-btn" data-filter="scenery" aria-pressed="false">Cinematography Stills</button>
             </div>
           </div>
 
-          <!-- Dynamic Filterable Items List -->
+          <!-- Dynamic Filterable Items Grid -->
           <div class="filtered-items-grid" id="filtered-items-grid" aria-live="polite">
             <article class="interactive-card" data-category="sound">
               <div class="card-badge">Audio Craft</div>
@@ -677,6 +743,76 @@
               <h3 class="card-title">Debussy Arabesque Piano Study</h3>
               <p class="card-text">Short film exploring the connection between Claude Debussy's classical impressionism and modern alienation.</p>
               <span class="card-meta">Medium: Digital 24fps</span>
+            </article>
+
+            <!-- Background Still 1: background.jpg -->
+            <article class="interactive-card still-card" data-category="scenery">
+              <div class="still-thumb-frame">
+                <img src="./assets/background.jpg" alt="Verdant summer rice field at golden hour" class="still-thumb-img" loading="lazy">
+                <span class="still-badge">Still 01</span>
+              </div>
+              <h3 class="card-title">Scene 01: Verdant Solitude</h3>
+              <p class="card-text">Hasumi immersed in sound within the boundless summer rice field. Noboru Shinoda's landmark high-contrast digital daylight.</p>
+              <div class="still-actions">
+                <button type="button" class="btn btn-text open-modal-btn" data-track="bg1">Cinematography Notes &rarr;</button>
+                <button type="button" class="btn btn-outline btn-sm apply-bg-btn" data-bg="./assets/background.jpg" data-name="Verdant Solitude (Summer Rice Field)">Set as Horizon</button>
+              </div>
+            </article>
+
+            <!-- Background Still 2: background2.jpg -->
+            <article class="interactive-card still-card" data-category="scenery">
+              <div class="still-thumb-frame">
+                <img src="./assets/background2.jpg" alt="Concert sanctuary with glowing Lily Chou-Chou screen" class="still-thumb-img" loading="lazy">
+                <span class="still-badge">Still 02</span>
+              </div>
+              <h3 class="card-title">Scene 02: Concert Sanctuary</h3>
+              <p class="card-text">Hasumi facing the monolithic illuminated CRT stadium display of 'Lily Chou-Chou' in the rainy night.</p>
+              <div class="still-actions">
+                <button type="button" class="btn btn-text open-modal-btn" data-track="bg2">Cinematography Notes &rarr;</button>
+                <button type="button" class="btn btn-outline btn-sm apply-bg-btn" data-bg="./assets/background2.jpg" data-name="Concert Sanctuary (The Glowing Screen)">Set as Horizon</button>
+              </div>
+            </article>
+
+            <!-- Background Still 3: background3.png -->
+            <article class="interactive-card still-card" data-category="scenery">
+              <div class="still-thumb-frame">
+                <img src="./assets/background3.png" alt="Hasumi in winter coat on twilight autumn harvested fields" class="still-thumb-img" loading="lazy">
+                <span class="still-badge">Still 03</span>
+              </div>
+              <h3 class="card-title">Scene 03: Wounded Autumn</h3>
+              <p class="card-text">Hasumi in winter coat and duffle bag standing in the plowed field under an eerie lilac-lavender twilight sky.</p>
+              <div class="still-actions">
+                <button type="button" class="btn btn-text open-modal-btn" data-track="bg3">Cinematography Notes &rarr;</button>
+                <button type="button" class="btn btn-outline btn-sm apply-bg-btn" data-bg="./assets/background3.png" data-name="Wounded Autumn (Twilight Horizon)">Set as Horizon</button>
+              </div>
+            </article>
+
+            <!-- Background Still 4: background4.jpg -->
+            <article class="interactive-card still-card" data-category="scenery">
+              <div class="still-thumb-frame">
+                <img src="./assets/background4.jpg" alt="Tsuda and Hasumi walking along narrow rural pathway" class="still-thumb-img" loading="lazy">
+                <span class="still-badge">Still 04</span>
+              </div>
+              <h3 class="card-title">Scene 04: Rural Pathway</h3>
+              <p class="card-text">Intimate handheld shot of Tsuda kicking her feet playfully as she walks beside Hasumi along the country road.</p>
+              <div class="still-actions">
+                <button type="button" class="btn btn-text open-modal-btn" data-track="bg4">Cinematography Notes &rarr;</button>
+                <button type="button" class="btn btn-outline btn-sm apply-bg-btn" data-bg="./assets/background4.jpg" data-name="Rural Pathway (Youth & Distance)">Set as Horizon</button>
+              </div>
+            </article>
+
+            <!-- Background Still 5: background5.png -->
+            <article class="interactive-card still-card" data-category="scenery">
+              <div class="still-thumb-frame">
+                <img src="./assets/background5.png" alt="Transmission tower with kites and rainbow flare in cerulean sky" class="still-thumb-img" loading="lazy">
+                <span class="still-badge">Still 05</span>
+              </div>
+              <h3 class="card-title">Scene 05: The Celestial Antenna</h3>
+              <p class="card-text">Soaring telecommunications tower with red kites dancing in deep blue sky and circular prismatic lens flare.</p>
+              <div class="still-actions">
+                <button type="button" class="btn btn-text open-modal-btn" data-track="bg5">Cinematography Notes &rarr;</button>
+                <button type="button" class="btn btn-outline btn-sm apply-bg-btn" data-bg="./assets/background5.png" data-name="The Celestial Antenna (Transmission Tower)">Set as Horizon</button>
+              </div>
             </article>
           </div>
 
@@ -857,6 +993,7 @@
 
     <!-- ======================================================= -->
     <!-- 5. CONTACT / CTA SECTION                                -->
+    <!-- (With background5.png Radio Tower Backdrop)             -->
     <!-- ======================================================= -->
     <section class="contact-section" id="contact" aria-labelledby="contact-heading">
       <div class="container">
