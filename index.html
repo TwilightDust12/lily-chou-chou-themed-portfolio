@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Ether — Personal Creative Portfolio of Philia. Inspired by the cinematography, ethereal soundscapes, and emotional resonance of Shunji Iwai's All About Lily Chou-Chou.">
+  <meta name="keywords" content="Lily Chou-Chou, The Ether, Philia, Personal Portfolio, Sound Design, Cinematography, Web Development, Ambient Music, Kokyuu, Glide, Shunji Iwai">
+  <meta name="author" content="Philia">
+  <meta name="theme-color" content="#070c18">
+  <title>The Ether | Philia — Personal Portfolio &amp; Lily Chou-Chou Archive</title>
+
+  <!-- Google Fonts: Cinzel for cinematic titles, Inter for high-readability body, JetBrains Mono for cyber-code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Relative Path to Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Relative Path to JavaScript with defer -->
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================= -->
+  <!-- 1. HEADER / NAVBAR LANDMARK                               -->
+  <!-- ========================================================= -->
+  <header class="site-header" id="header" role="banner">
+    <div class="header-container container">
+      <!-- Brand Logo and Identity -->
+      <a href="#hero" class="brand-link" aria-label="The Ether - Philia Portfolio Home">
+        <img 
+          src="./assets/logo.png" 
+          alt="Lily Chou-Chou emblem logo featuring the stylized Ç insignia and dagger cross" 
+          class="brand-logo" 
+          width="139" 
+          height="46">
+        <div class="brand-text-group">
+          <span class="brand-title">The Ether</span>
+          <span class="brand-subtitle">Philia &bull; Creative Portfolio</span>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Menu Button -->
+      <button 
+        type="button" 
+        class="menu-toggle" 
+        id="menu-toggle" 
+        aria-label="Toggle navigation menu" 
+        aria-expanded="false" 
+        aria-controls="primary-navigation">
+        <span class="hamburger-bar" aria-hidden="true"></span>
+        <span class="hamburger-bar" aria-hidden="true"></span>
+        <span class="hamburger-bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- Primary Navigation Links -->
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary Navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills &amp; Ethos</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Featured Works</a></li>
+          <li class="nav-item"><a href="#interactive" class="nav-link">Interactive Terminal</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Enhanced Accessible Theme Switcher (Smooth Sunlit / Nocturnal Ether Toggle) -->
+        <button 
+          type="button" 
+          class="theme-toggle" 
+          id="theme-toggle" 
+          aria-label="Switch to sunlit day mode" 
+          title="Switch to sunlit day mode">
+          <span class="theme-icon-box" aria-hidden="true">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- MAIN CONTENT LANDMARK                                     -->
+  <!-- ========================================================= -->
+  <main id="main-content" class="site-main">
+
+    <!-- ======================================================= -->
+    <!-- 2. HERO SECTION                                         -->
+    <!-- ======================================================= -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      
+      <!-- Atmospheric Typographic Poster Watermark (hero2.png) -->
+      <div class="hero-watermark-layer" aria-hidden="true">
+        <img 
+          src="./assets/hero2.png" 
+          alt="" 
+          class="hero-watermark-img" 
+          width="1743" 
+          height="1200" 
+          loading="eager">
+      </div>
+
+      <div class="container hero-container">
+        
+        <!-- Hero Text & Value Proposition -->
+        <div class="hero-text-content">
+          <div class="hero-badge-row">
+            <span class="hero-badge">Personal Portfolio &bull; Sound &amp; Code</span>
+            <span class="hero-subbadge">BBS Alias: Philia</span>
+          </div>
+          <h1 id="hero-title" class="hero-heading">Crafting Digital Sanctuaries in the Frequency of the Ether</h1>
+          <p class="hero-subtitle">
+            I am a creative developer, ambient sound designer, and digital archivist. Inspired by Shunji Iwai’s cinematic poetry, Noboru Shinoda’s evocative natural lighting, and the haunting melodies of Lily Chou-Chou, I build atmospheric web experiences that bring stillness to modern digital noise.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary" aria-label="Explore featured portfolio pieces">
+              <span>View Portfolio Pieces</span>
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#interactive" class="btn btn-outline" aria-label="Launch interactive audio terminal and archives">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>Launch Ether Terminal</span>
+            </a>
+          </div>
+
+          <!-- Highlight Counters -->
+          <div class="hero-stats" role="region" aria-label="Portfolio Highlights">
+            <div class="stat-card">
+              <span class="stat-value">6+</span>
+              <span class="stat-label">Featured Works</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">96kHz</span>
+              <span class="stat-label">Lossless Ether Audio</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Semantic &amp; Accessible</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Cinematic Imagery (hero.png) -->
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img 
+              src="./assets/hero.png" 
+              alt="Listener Philia standing solitary amidst a boundless green rice field wearing headphones and holding a portable CD player" 
+              class="hero-media-img"
+              width="600" 
+              height="338"
+              loading="eager">
+            <div class="now-playing-badge" aria-hidden="true">
+              <span class="pulse-indicator"></span>
+              <span class="now-playing-text">Atmosphere: <strong>Glide (Kokyuu Master Mix)</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 3. CORE CONTENT SECTION: ABOUT ME                       -->
+    <!-- ======================================================= -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Identity &amp; Vision</span>
+          <h2 id="about-heading" class="section-title">About Philia &amp; The Ether</h2>
+          <p class="section-lead">
+            A personal portfolio forged in the quiet intersection between early 2000s cyber-solitude, Debussy classical phrasing, and modern creative web technology.
+          </p>
+        </div>
+
+        <div class="about-content-layout">
+          <!-- Story Block -->
+          <article class="bio-narrative-card">
+            <h3 class="bio-title">Recreating the Atmosphere of Lily Chou-Chou</h3>
+            <p>
+              In Shunji Iwai’s landmark 2001 film <em>All About Lily Chou-Chou</em>, a high school boy escapes the brutal pressures of his reality by stepping into vast, sun-drenched rice fields with his Discman headphones. On the internet BBS board, under the handle <strong>Philia</strong>, he discovers the &ldquo;Ether&rdquo; (エーテル)—a cosmic, emotional frequency where pain dissolves into musical purity.
+            </p>
+            <p>
+              As a creator, I take this cinematographic philosophy as my design manifesto. In an era dominated by relentless algorithms and attention-seeking feeds, I design digital sanctuaries: web spaces that breathe, soundscapes that envelop, and interfaces that respect human stillness and contemplation.
+            </p>
+            
+            <div class="quote-box">
+              <blockquote cite="https://en.wikipedia.org/wiki/All_About_Lily_Chou-Chou">
+                &ldquo;The Ether is infinite. When you surrender your thoughts to the vibration, even solitude feels sacred.&rdquo;
+              </blockquote>
+              <cite class="quote-author">&mdash; Philia, BBS Forum Entry #012</cite>
+            </div>
+
+            <!-- Archival Poster Study Card Featuring hero2.png -->
+            <div class="archival-poster-badge">
+              <div class="poster-badge-thumb">
+                <img 
+                  src="./assets/hero2.png" 
+                  alt="Official 'All About Lily Chou-Chou' graphic typography poster artwork" 
+                  class="poster-badge-img" 
+                  width="320" 
+                  height="220" 
+                  loading="lazy">
+              </div>
+              <div class="poster-badge-caption">
+                <span class="badge-tag">Archival Typographic Study</span>
+                <h4 class="poster-badge-title">Title Sequencing &amp; Atmospheric Typography</h4>
+                <p>Ascending weights transitioning from faint hairline contours into vibrant sunset orange, mirroring the ascension of consciousness into the Ether.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Right Column: Cinematographic Scene Study (hi.gif) + Pillars -->
+          <div class="pillars-column">
+            
+            <!-- Living Cinematographic Motion Study Featuring hi.gif -->
+            <figure class="scene-study-card" aria-labelledby="scene-study-caption">
+              <div class="scene-study-media">
+                <img 
+                  src="./assets/hi.gif" 
+                  alt="Cinematic excerpt from the movie depicting Shiori Tsuda spinning and gliding with outstretched arms amidst windswept tall green grass" 
+                  class="scene-study-gif" 
+                  width="250" 
+                  height="213" 
+                  loading="lazy">
+                <div class="scene-study-scanlines" aria-hidden="true"></div>
+                <span class="scene-study-tag">24fps Archival Film Motion</span>
+              </div>
+              <figcaption id="scene-study-caption" class="scene-study-caption">
+                <h4 class="scene-study-title">Scene Study: The Gliding Flight (Yu Aoi)</h4>
+                <p>Noboru Shinoda’s handheld camera kinetics capturing the visceral feeling of flight and weightlessness—the living embodiment of the anthem &ldquo;Glide&rdquo;.</p>
+              </figcaption>
+            </figure>
+
+            <article class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12h5l3 8 4-16 3 8h5"></path>
+                </svg>
+              </div>
+              <div class="pillar-info">
+                <h4 class="pillar-heading">Acoustic Immersion</h4>
+                <p class="pillar-desc">
+                  Designing custom Web Audio synthesizer nodes, ambient field captures, and spatial soundscapes inspired by Takeshi Kobayashi and Salyu.
+                </p>
+              </div>
+            </article>
+
+            <article class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                </svg>
+              </div>
+              <div class="pillar-info">
+                <h4 class="pillar-heading">Cinematographic Lighting</h4>
+                <p class="pillar-desc">
+                  Replicating Noboru Shinoda’s iconic Sony digital camcorder look: radiant lens blooms, high-contrast greens, and deep twilight blacks.
+                </p>
+              </div>
+            </article>
+
+            <article class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="pillar-info">
+                <h4 class="pillar-heading">Pure Craftsmanship</h4>
+                <p class="pillar-desc">
+                  Zero bloated third-party dependencies. Built strictly on semantic HTML5 landmarks, modern CSS3 variables and Grid, and modular vanilla ES6+.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 3. CORE CONTENT SECTION: SKILLS GRID                    -->
+    <!-- ======================================================= -->
+    <section class="skills-section" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Competencies &amp; Toolkit</span>
+          <h2 id="skills-heading" class="section-title">Creative &amp; Technical Capabilities</h2>
+          <p class="section-lead">
+            Combining empathetic artistic vision with clean, robust engineering to deliver memorable digital artifacts.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill 1 -->
+          <article class="skill-card">
+            <div class="skill-header">
+              <span class="skill-category">Frontend Architecture</span>
+              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+            </div>
+            <h3 class="skill-title">Semantic HTML5 &amp; Accessibility</h3>
+            <p class="skill-text">
+              Strict adherence to W3C standards, WCAG 2.1 AA accessible landmarks, ARIA role mapping, and keyboard focus management.
+            </p>
+            <ul class="skill-tags" aria-label="Tags for HTML &amp; Accessibility">
+              <li>WCAG 2.1</li>
+              <li>ARIA Landmarks</li>
+              <li>SEO Semantic</li>
+            </ul>
+          </article>
+
+          <!-- Skill 2 -->
+          <article class="skill-card">
+            <div class="skill-header">
+              <span class="skill-category">Visual Styling</span>
+              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+            </div>
+            <h3 class="skill-title">Modern CSS3, Grid &amp; Theming</h3>
+            <p class="skill-text">
+              Fluid responsive layouts, CSS Custom Properties, smooth cubic-bezier transitions, glassmorphic filters, and Dark/Light modes.
+            </p>
+            <ul class="skill-tags" aria-label="Tags for CSS &amp; Theming">
+              <li>CSS Grid</li>
+              <li>Flexbox</li>
+              <li>Tokens (:root)</li>
+            </ul>
+          </article>
+
+          <!-- Skill 3 -->
+          <article class="skill-card">
+            <div class="skill-header">
+              <span class="skill-category">Scripting &amp; Logic</span>
+              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+            </div>
+            <h3 class="skill-title">Vanilla JavaScript (ES6+)</h3>
+            <p class="skill-text">
+              Lightweight, modular, event-driven interactions, DOM state manipulation, modal controllers, and asynchronous data flows.
+            </p>
+            <ul class="skill-tags" aria-label="Tags for JavaScript">
+              <li>ES6 Modules</li>
+              <li>Event-Driven</li>
+              <li>Zero-Dep</li>
+            </ul>
+          </article>
+
+          <!-- Skill 4 -->
+          <article class="skill-card">
+            <div class="skill-header">
+              <span class="skill-category">Sound &amp; Music</span>
+              <span class="skill-level" aria-label="Skill level: Intermediate-High">Specialist</span>
+            </div>
+            <h3 class="skill-title">Ambient Sound Design</h3>
+            <p class="skill-text">
+              Field recording synthesis, analogue tape warmth modeling, Debussy modal harmonies, and reactive audio visualizer development.
+            </p>
+            <ul class="skill-tags" aria-label="Tags for Sound Design">
+              <li>Audio Visualizer</li>
+              <li>Atmosphere</li>
+              <li>Soundscapes</li>
+            </ul>
+          </article>
+
+          <!-- Skill 5 -->
+          <article class="skill-card">
+            <div class="skill-header">
+              <span class="skill-category">Cinematic Arts</span>
+              <span class="skill-level" aria-label="Skill level: Advanced">Specialist</span>
+            </div>
+            <h3 class="skill-title">Cinematography &amp; Color Art</h3>
+            <p class="skill-text">
+              Recreation of high-exposure outdoor daylight, handheld camera kinetics, chromatic depth, and vintage 2001 film aesthetics.
+            </p>
+            <ul class="skill-tags" aria-label="Tags for Cinematography">
+              <li>Noboru Shinoda</li>
+              <li>Color Grade</li>
+              <li>Visual Poetry</li>
+            </ul>
+          </article>
+
+          <!-- Skill 6 -->
+          <article class="skill-card">
+            <div class="skill-header">
+              <span class="skill-category">UI/UX Strategy</span>
+              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+            </div>
+            <h3 class="skill-title">Atmospheric Interface Design</h3>
+            <p class="skill-text">
+              Harmonizing nostalgic digital bulletin-board nostalgia with modern high-conversion UI patterns and fluid motion choreography.
+            </p>
+            <ul class="skill-tags" aria-label="Tags for UI/UX Design">
+              <li>Interactive UX</li>
+              <li>Micro-Interactions</li>
+              <li>BBS Heritage</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 3. CORE CONTENT SECTION: FEATURED PROJECTS GRID         -->
+    <!-- ======================================================= -->
+    <section class="projects-section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 id="projects-heading" class="section-title">Featured Portfolio Works</h2>
+          <p class="section-lead">
+            Explore curated creative pieces spanning interactive sound consoles, cinematographic studies, and web architecture.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Glide Melodic Player -->
+          <article class="project-card" aria-labelledby="proj-1-title">
+            <header class="project-header">
+              <span class="project-tag">Interactive Audio / Web App</span>
+              <span class="project-year">2026</span>
+            </header>
+            <div class="project-body">
+              <h3 id="proj-1-title" class="project-title">Project Glide: The Ether Audio Station</h3>
+              <p class="project-desc">
+                A custom-built vanilla web audio interface reproducing the tactile feel of an early 2000s Discman. Features dynamic spectrum frequency animation, timeline scrubbing, and lossless streaming.
+              </p>
+              <ul class="project-spec-list" aria-label="Key specifications for Project Glide">
+                <li><span class="spec-highlight">Tech:</span> Vanilla JS &bull; CSS Custom Properties &bull; Audio API</li>
+                <li><span class="spec-highlight">Aesthetic:</span> Ethereal Blue &bull; Minimalist LCD Emulation</li>
+              </ul>
+            </div>
+            <footer class="project-footer">
+              <button 
+                type="button" 
+                class="btn btn-text open-modal-btn" 
+                data-track="glide" 
+                aria-label="View case study and liner notes for Project Glide">
+                <span>View Case Study &amp; Notes</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Project 2: Resonance BBS Archive -->
+          <article class="project-card" aria-labelledby="proj-2-title">
+            <header class="project-header">
+              <span class="project-tag">Web Platform / Community</span>
+              <span class="project-year">2025</span>
+            </header>
+            <div class="project-body">
+              <h3 id="proj-2-title" class="project-title">Resonance BBS: Digital Solitude Forum</h3>
+              <p class="project-desc">
+                An authentic recreation of the web forum interface from <em>All About Lily Chou-Chou</em>. Monochromatic text over green and obsidian backdrops where users shared raw poetry and anonymous memories.
+              </p>
+              <ul class="project-spec-list" aria-label="Key specifications for Resonance BBS">
+                <li><span class="spec-highlight">Tech:</span> Accessible HTML5 &bull; CSS Grid &bull; Local Storage</li>
+                <li><span class="spec-highlight">Aesthetic:</span> 2001 Cyber Nostalgia &bull; High Contrast</li>
+              </ul>
+            </div>
+            <footer class="project-footer">
+              <button 
+                type="button" 
+                class="btn btn-text open-modal-btn" 
+                data-track="kyoumei" 
+                aria-label="View case study for Resonance BBS">
+                <span>View Case Study &amp; Notes</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Project 3: Kokyuu Sound Architecture -->
+          <article class="project-card" aria-labelledby="proj-3-title">
+            <header class="project-header">
+              <span class="project-tag">Sound Design / Spatial Audio</span>
+              <span class="project-year">2025</span>
+            </header>
+            <div class="project-body">
+              <h3 id="proj-3-title" class="project-title">Kokyuu (Breathe) Sound Experience</h3>
+              <p class="project-desc">
+                An ambient sound suite deconstructing the track &ldquo;Kokyuu&rdquo;. Combines binaural field recordings of wind whispering through Kanto rice stalks with acoustic cello and Debussy-style piano chords.
+              </p>
+              <ul class="project-spec-list" aria-label="Key specifications for Kokyuu Sound Architecture">
+                <li><span class="spec-highlight">Tech:</span> Binaural Field Audio &bull; Analog Tape Master</li>
+                <li><span class="spec-highlight">Aesthetic:</span> Claude Debussy &bull; Salyu Harmonics</li>
+              </ul>
+            </div>
+            <footer class="project-footer">
+              <button 
+                type="button" 
+                class="btn btn-text open-modal-btn" 
+                data-track="kaifuku" 
+                aria-label="View case study for Kokyuu Sound Experience">
+                <span>View Case Study &amp; Notes</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Project 4: Shinoda Cinematic Lens Study -->
+          <article class="project-card" aria-labelledby="proj-4-title">
+            <header class="project-header">
+              <span class="project-tag">Cinematography / Visual Art</span>
+              <span class="project-year">2024</span>
+            </header>
+            <div class="project-body">
+              <h3 id="proj-4-title" class="project-title">Verdant Solitude: Photographic Essay</h3>
+              <p class="project-desc">
+                A high-resolution visual narrative captured on digital cinema lenses paying homage to Noboru Shinoda’s cinematography. Capturing solitary subjects bathed in summer sun amidst rice fields.
+              </p>
+              <ul class="project-spec-list" aria-label="Key specifications for Verdant Solitude">
+                <li><span class="spec-highlight">Tech:</span> High Dynamic Range &bull; Color Science LUTs</li>
+                <li><span class="spec-highlight">Aesthetic:</span> Lens Flares &bull; Saturated Verdant Green</li>
+              </ul>
+            </div>
+            <footer class="project-footer">
+              <button 
+                type="button" 
+                class="btn btn-text open-modal-btn" 
+                data-track="tsubasa" 
+                aria-label="View case study for Verdant Solitude">
+                <span>View Case Study &amp; Notes</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Project 5: The Blue Ether Protocol -->
+          <article class="project-card" aria-labelledby="proj-5-title">
+            <header class="project-header">
+              <span class="project-tag">Generative Art / Canvas</span>
+              <span class="project-year">2024</span>
+            </header>
+            <div class="project-body">
+              <h3 id="proj-5-title" class="project-title">The Blue Ether Generative Canvas</h3>
+              <p class="project-desc">
+                An interactive real-time particle simulation responding to microtonal sound input. Simulates the flow of &ldquo;Ether waves&rdquo; transitioning from dissonant red to soothing, healing blue.
+              </p>
+              <ul class="project-spec-list" aria-label="Key specifications for The Blue Ether Protocol">
+                <li><span class="spec-highlight">Tech:</span> HTML5 Canvas &bull; Mathematical Physics Engine</li>
+                <li><span class="spec-highlight">Aesthetic:</span> Fluid Dynamics &bull; Phosphor Glow</li>
+              </ul>
+            </div>
+            <footer class="project-footer">
+              <button 
+                type="button" 
+                class="btn btn-text open-modal-btn" 
+                data-track="houwa" 
+                aria-label="View case study for The Blue Ether Protocol">
+                <span>View Case Study &amp; Notes</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </footer>
+          </article>
+
+          <!-- Project 6: Arabesque No. 1 Interactive -->
+          <article class="project-card" aria-labelledby="proj-6-title">
+            <header class="project-header">
+              <span class="project-tag">Musicology / Web Interactive</span>
+              <span class="project-year">2024</span>
+            </header>
+            <div class="project-body">
+              <h3 id="proj-6-title" class="project-title">Debussy to Chou-Chou: Harmonic Bridges</h3>
+              <p class="project-desc">
+                An educational interactive article analyzing how Claude Debussy's Impressionist scales directly influenced Takeshi Kobayashi’s chord structures and Lily Chou-Chou’s vocal modulations.
+              </p>
+              <ul class="project-spec-list" aria-label="Key specifications for Arabesque No. 1 Interactive">
+                <li><span class="spec-highlight">Tech:</span> Interactive SVG Score &bull; Sound Synthesis</li>
+                <li><span class="spec-highlight">Aesthetic:</span> French Impressionism &bull; J-Alt Rock</li>
+              </ul>
+            </div>
+            <footer class="project-footer">
+              <button 
+                type="button" 
+                class="btn btn-text open-modal-btn" 
+                data-track="glide-single" 
+                aria-label="View case study for Debussy to Chou-Chou">
+                <span>View Case Study &amp; Notes</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 4. INTERACTIVE COMPONENT CONTAINER                      -->
+    <!-- ======================================================= -->
+    <section class="interactive-section" id="interactive" aria-labelledby="interactive-title">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Interactive Terminal</span>
+          <h2 id="interactive-title" class="section-title">The Ether Sound Console &amp; Dynamic Archive</h2>
+          <p class="section-lead">
+            Interact with our live simulation station. Filter portfolio entries, audition simulated audio playback with motion vignettes, and open interactive FAQ dialogues.
+          </p>
+        </div>
+
+        <div class="interactive-component-container">
+          
+          <!-- Component 1: Category Filter Controls -->
+          <div class="filter-controls-wrapper" role="group" aria-label="Filter portfolio and archive entries">
+            <span class="filter-label">Filter Archival Pieces:</span>
+            <div class="filter-btn-group">
+              <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Works</button>
+              <button type="button" class="filter-btn" data-filter="sound" aria-pressed="false">Sound &amp; Audio</button>
+              <button type="button" class="filter-btn" data-filter="visual" aria-pressed="false">Visual &amp; Film</button>
+              <button type="button" class="filter-btn" data-filter="code" aria-pressed="false">Web &amp; Code</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Filterable Items List -->
+          <div class="filtered-items-grid" id="filtered-items-grid" aria-live="polite">
+            <article class="interactive-card" data-category="sound">
+              <div class="card-badge">Audio Craft</div>
+              <h3 class="card-title">Kokyuu Analogue Reel Restoration</h3>
+              <p class="card-text">Studio recorded 96kHz/24-bit masters with bespoke tube saturation for pristine dynamic warmth.</p>
+              <span class="card-meta">Field: Tokyo Sound Lab</span>
+            </article>
+
+            <article class="interactive-card" data-category="visual">
+              <div class="card-badge">Cinematography</div>
+              <h3 class="card-title">Kanto Rice Fields at Golden Hour</h3>
+              <p class="card-text">Photographic recreation of Hasumi Yuichi's solitude scene under high-contrast sun flare.</p>
+              <span class="card-meta">Aspect: 16:9 Anamorphic</span>
+            </article>
+
+            <article class="interactive-card" data-category="code">
+              <div class="card-badge">Web Architecture</div>
+              <h3 class="card-title">Zero-Dependency Accessible Player</h3>
+              <p class="card-text">Engineered strictly with vanilla ES6+ and WCAG 2.1 accessible keyboard navigation and ARIA labels.</p>
+              <span class="card-meta">Tech: Vanilla HTML/CSS/JS</span>
+            </article>
+
+            <article class="interactive-card" data-category="sound">
+              <div class="card-badge">Sound Craft</div>
+              <h3 class="card-title">Binaural Wind &amp; Discman Echo</h3>
+              <p class="card-text">Atmospheric soundscape mimicking the sound of open-air headphone leakage amidst gentle summer breeze.</p>
+              <span class="card-meta">Format: Binaural 3D Audio</span>
+            </article>
+
+            <article class="interactive-card" data-category="code">
+              <div class="card-badge">Web Architecture</div>
+              <h3 class="card-title">BBS Message Board Simulator</h3>
+              <p class="card-text">Retro bulletin board system interface with local persistence and accessible live screen reader announcements.</p>
+              <span class="card-meta">Tech: DOM State Engine</span>
+            </article>
+
+            <article class="interactive-card" data-category="visual">
+              <div class="card-badge">Cinematography</div>
+              <h3 class="card-title">Debussy Arabesque Piano Study</h3>
+              <p class="card-text">Short film exploring the connection between Claude Debussy's classical impressionism and modern alienation.</p>
+              <span class="card-meta">Medium: Digital 24fps</span>
+            </article>
+          </div>
+
+          <!-- Component 2: Simulated Disc Player & Audio Visualizer with Integrated Motion Screen (hi.gif) -->
+          <div class="player-console" role="region" aria-label="Interactive Music Player Simulation">
+            <div class="player-header">
+              <div class="player-status">
+                <span class="player-led" aria-hidden="true"></span>
+                <span id="player-status-text">DISC LOADED: READY</span>
+              </div>
+              <div class="player-time" id="player-time-display" aria-label="Playback timestamp">00:00 / 03:41</div>
+            </div>
+
+            <!-- Integrated Visual Screen Display (hi.gif) -->
+            <div class="player-visual-screen" id="player-visual-screen" aria-label="Now Playing Motion Screen">
+              <img 
+                src="./assets/hi.gif" 
+                alt="Animated scene from the film depicting Tsuda spinning with outstretched arms in the green field" 
+                class="player-screen-media" 
+                width="250" 
+                height="213">
+              <div class="player-screen-overlay" aria-hidden="true">
+                <span class="screen-scanlines"></span>
+                <span class="screen-track-indicator">TRACK 01: GLIDE &bull; 44.1kHz DIGITAL ETHER</span>
+              </div>
+            </div>
+
+            <div class="player-track-info">
+              <h3 class="player-track-name" id="current-track-name">Glide — Lily Chou-Chou</h3>
+              <p class="player-track-sub" id="current-track-album">Album: Kokyuu (呼吸) • Track 01</p>
+            </div>
+
+            <!-- Equalizer / Visualizer Bars -->
+            <div class="player-visualizer" id="audio-visualizer" aria-hidden="true">
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+              <div class="vis-bar"></div>
+            </div>
+
+            <!-- Playback Controls -->
+            <div class="player-controls">
+              <button type="button" class="ctrl-btn" id="ctrl-prev" aria-label="Previous Track">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                  <line x1="5" y1="19" x2="5" y2="5"></line>
+                </svg>
+              </button>
+
+              <button type="button" class="ctrl-btn ctrl-play" id="ctrl-play" aria-label="Play current track">
+                <svg class="icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" style="display: none;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </button>
+
+              <button type="button" class="ctrl-btn" id="ctrl-next" aria-label="Next Track">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                  <line x1="19" y1="5" x2="19" y2="19"></line>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Scrubbing Bar -->
+            <div class="player-progress-container">
+              <label for="track-scrubber" class="sr-only">Seek Track Position</label>
+              <input 
+                type="range" 
+                id="track-scrubber" 
+                class="track-scrubber" 
+                min="0" 
+                max="100" 
+                value="0" 
+                aria-label="Track progress scrubber"
+                aria-valuemin="0" 
+                aria-valuemax="100" 
+                aria-valuenow="0">
+            </div>
+          </div>
+
+          <!-- Component 3: FAQ / Lore Accordion -->
+          <div class="accordion-container" aria-label="The Ether Knowledgebase Accordion">
+            <h3 class="accordion-section-title">The Ether Knowledgebase &amp; FAQ</h3>
+            
+            <div class="accordion" id="ether-faq">
+              <!-- Item 1 -->
+              <div class="accordion-item">
+                <h4 class="accordion-header">
+                  <button 
+                    type="button" 
+                    class="accordion-trigger" 
+                    id="faq-btn-1" 
+                    aria-expanded="false" 
+                    aria-controls="faq-panel-1">
+                    <span>What inspired this portfolio's theme and visual direction?</span>
+                    <span class="accordion-chevron" aria-hidden="true">&plus;</span>
+                  </button>
+                </h4>
+                <div 
+                  class="accordion-panel" 
+                  id="faq-panel-1" 
+                  role="region" 
+                  aria-labelledby="faq-btn-1" 
+                  hidden>
+                  <p>
+                    This portfolio is an homage to Shunji Iwai’s masterpiece <em>All About Lily Chou-Chou</em>. The website captures its core visual motifs: glowing sunlight piercing through summer green rice fields, the tactile romance of carrying a Discman, and the quiet dignity of seeking emotional connection across online communities.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="accordion-item">
+                <h4 class="accordion-header">
+                  <button 
+                    type="button" 
+                    class="accordion-trigger" 
+                    id="faq-btn-2" 
+                    aria-expanded="false" 
+                    aria-controls="faq-panel-2">
+                    <span>How does Philia approach digital development and sound design?</span>
+                    <span class="accordion-chevron" aria-hidden="true">&plus;</span>
+                  </button>
+                </h4>
+                <div 
+                  class="accordion-panel" 
+                  id="faq-panel-2" 
+                  role="region" 
+                  aria-labelledby="faq-btn-2" 
+                  hidden>
+                  <p>
+                    I prioritize pure semantic craftsmanship: zero bloated third-party dependencies, fluid responsiveness across all screens, full keyboard accessibility, and subtle atmospheric motion. Sound is treated as an equal partner to visual layout.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="accordion-item">
+                <h4 class="accordion-header">
+                  <button 
+                    type="button" 
+                    class="accordion-trigger" 
+                    id="faq-btn-3" 
+                    aria-expanded="false" 
+                    aria-controls="faq-panel-3">
+                    <span>What is the significance of the &ldquo;Ether&rdquo;?</span>
+                    <span class="accordion-chevron" aria-hidden="true">&plus;</span>
+                  </button>
+                </h4>
+                <div 
+                  class="accordion-panel" 
+                  id="faq-panel-3" 
+                  role="region" 
+                  aria-labelledby="faq-btn-3" 
+                  hidden>
+                  <p>
+                    In the film’s mythology, the Ether is the metaphysical medium through which true emotion travels. It can be radiant and restorative (the blue ether) or crushing and suffocating (the red ether). This website was built to channel the restorative blue ether into modern web architecture.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 5. CONTACT / CTA SECTION                                -->
+    <!-- ======================================================= -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Direct Transmission</span>
+          <h2 id="contact-heading" class="section-title">Initiate Contact with Philia</h2>
+          <p class="section-lead">
+            Whether you have a creative collaboration proposal, audio-visual inquiry, or simply wish to share thoughts across the Ether, dispatch your message below.
+          </p>
+        </div>
+
+        <div class="contact-layout-grid">
+          <!-- Contact Channels Info Column -->
+          <div class="contact-cards-column">
+            <article class="contact-card">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-card-info">
+                <h3 class="contact-card-title">Electronic Mail</h3>
+                <p class="contact-card-desc">For commissions and collaboration inquiries:</p>
+                <a href="mailto:philia@the-ether.sanctuary" class="contact-card-link">philia@the-ether.sanctuary</a>
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </div>
+              <div class="contact-card-info">
+                <h3 class="contact-card-title">BBS Solitude Channel</h3>
+                <p class="contact-card-desc">Digital forum frequency handle:</p>
+                <span class="contact-card-link">bbs.lilychou-chou.ph/user/philia</span>
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="contact-card-info">
+                <h3 class="contact-card-title">Location &amp; Availability</h3>
+                <p class="contact-card-desc">Tokyo &bull; Remote Worldwide</p>
+                <span class="contact-card-text">Available for select web &amp; audio projects</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Working Accessible Contact Form -->
+          <div class="contact-form-container">
+            <form class="contact-form" id="contact-form" novalidate>
+              <h3 class="form-title">Send a Transmission</h3>
+
+              <!-- Name Field -->
+              <div class="form-group">
+                <label for="contact-name" class="form-label">
+                  Your Name / Handle <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="contact-name" 
+                  name="name" 
+                  class="form-input" 
+                  placeholder="e.g. Yuichi / Philia" 
+                  required 
+                  aria-required="true" 
+                  autocomplete="name">
+                <span class="form-error-msg" id="name-error" aria-live="assertive"></span>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group">
+                <label for="contact-email" class="form-label">
+                  Email Address <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="contact-email" 
+                  name="email" 
+                  class="form-input" 
+                  placeholder="you@sanctuary.org" 
+                  required 
+                  aria-required="true" 
+                  autocomplete="email">
+                <span class="form-error-msg" id="email-error" aria-live="assertive"></span>
+              </div>
+
+              <!-- Subject / Topic Field -->
+              <div class="form-group">
+                <label for="contact-topic" class="form-label">
+                  Inquiry Category <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <select id="contact-topic" name="topic" class="form-select" required aria-required="true">
+                  <option value="" disabled selected>Select an inquiry frequency...</option>
+                  <option value="project">Creative Web Commission</option>
+                  <option value="audio">Sound Design &amp; Audio Engineering</option>
+                  <option value="collab">Cinematography / Visual Collaboration</option>
+                  <option value="general">Ether Resonance / General Note</option>
+                </select>
+                <span class="form-error-msg" id="topic-error" aria-live="assertive"></span>
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group">
+                <label for="contact-message" class="form-label">
+                  Message / Transmission <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <textarea 
+                  id="contact-message" 
+                  name="message" 
+                  class="form-textarea" 
+                  rows="4" 
+                  placeholder="Share details regarding your vision, inquiry, or transmission..." 
+                  required 
+                  aria-required="true"></textarea>
+                <span class="form-error-msg" id="message-error" aria-live="assertive"></span>
+              </div>
+
+              <!-- Consent Checkbox -->
+              <div class="form-checkbox-group">
+                <input 
+                  type="checkbox" 
+                  id="contact-consent" 
+                  name="consent" 
+                  class="form-checkbox" 
+                  required 
+                  aria-required="true">
+                <label for="contact-consent" class="checkbox-label">
+                  I agree to transmit this message under the sanctuary principles of mutual respect.
+                </label>
+              </div>
+              <span class="form-error-msg" id="consent-error" aria-live="assertive"></span>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <span>Dispatch Transmission</span>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <!-- Dynamic Accessible Status Alert -->
+              <div class="form-status-alert" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- 6. FOOTER LANDMARK                                        -->
+  <!-- ========================================================= -->
+  <footer class="site-footer" id="footer" role="contentinfo" aria-label="Site Footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        
+        <!-- Brand / Identity Column -->
+        <div class="footer-brand-col">
+          <a href="#hero" class="footer-brand-link" aria-label="The Ether Home">
+            <img src="./assets/logo.png" alt="Lily Chou-Chou logo emblem in footer" class="footer-logo" width="120" height="40" loading="lazy">
+            <span class="footer-brand-name">The Ether &bull; Philia</span>
+          </a>
+          <p class="footer-brand-tagline">
+            Personal creative portfolio dedicated to capturing the cinematography, aural serenity, and profound emotional resonance of the Lily Chou-Chou universe.
+          </p>
+        </div>
+
+        <!-- Quick Navigation Links -->
+        <div class="footer-nav-col">
+          <h3 class="footer-heading">Navigation</h3>
+          <ul class="footer-link-list" role="list">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Philia</a></li>
+            <li><a href="#skills" class="footer-link">Skills &amp; Ethos</a></li>
+            <li><a href="#projects" class="footer-link">Featured Works</a></li>
+            <li><a href="#interactive" class="footer-link">Ether Terminal</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Archival & Reference Links -->
+        <div class="footer-nav-col">
+          <h3 class="footer-heading">Archival Canon</h3>
+          <ul class="footer-link-list" role="list">
+            <li><a href="#interactive" class="footer-link">Kokyuu (Breathe) Case</a></li>
+            <li><a href="#interactive" class="footer-link">Glide Acoustic Study</a></li>
+            <li><a href="#interactive" class="footer-link">Debussy Arabesque No. 1</a></li>
+            <li><a href="#about" class="footer-link">Noboru Shinoda Light</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media & Channels -->
+        <div class="footer-social-col">
+          <h3 class="footer-heading">Ether Channels</h3>
+          <p class="footer-social-text">Follow sound updates, code releases, and photography:</p>
+          <div class="social-icon-links" aria-label="Social media channels">
+            <a href="https://youtube.com" class="social-btn" aria-label="YouTube Channel" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+            <a href="https://spotify.com" class="social-btn" aria-label="Spotify Profile" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.496 17.306c-.218.358-.68.47-1.038.252-2.846-1.74-6.429-2.134-10.65-1.168-.41.093-.815-.164-.908-.574-.094-.41.163-.815.574-.908 4.625-1.056 8.583-.612 11.77 1.34.358.218.47.68.252 1.058zm1.467-3.26c-.276.448-.86.59-1.308.314-3.259-2.003-8.228-2.583-12.083-1.413-.503.152-1.03-.136-1.182-.64-.153-.503.136-1.03.64-1.182 4.41-1.338 9.905-.694 13.62 1.593.447.276.59.86.313 1.328zm.126-3.41c-3.908-2.32-10.347-2.533-14.077-1.401-.599.183-1.235-.159-1.418-.758-.183-.599.159-1.235.758-1.418 4.29-1.303 11.393-1.05 15.86 1.603.538.32.715 1.02.395 1.558-.32.538-1.02.715-1.518.416z"/>
+              </svg>
+            </a>
+            <a href="https://bandcamp.com" class="social-btn" aria-label="Bandcamp Channel" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M0 18.75l7.437-13.5h16.563l-7.438 13.5z"/>
+              </svg>
+            </a>
+            <a href="https://github.com" class="social-btn" aria-label="Project Repository on GitHub" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Copyright & Back-to-Top -->
+      <div class="footer-bottom-bar">
+        <p class="copyright-notice">
+          &copy; <span id="current-year">2026</span> Philia &bull; The Ether. Handcrafted with semantic HTML5, modern CSS3, and vanilla ES6+.
+        </p>
+        <div class="footer-actions">
+          <a href="#hero" class="back-to-top-btn" aria-label="Back to top of page">
+            <span>Back to Top</span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- ACCESSIBLE MODAL DIALOG                                   -->
+  <!-- ========================================================= -->
+  <div 
+    class="modal-backdrop" 
+    id="track-modal" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modal-title" 
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <h3 id="modal-title" class="modal-title">Archival Liner Notes</h3>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </header>
+      <div class="modal-content" id="modal-body-content">
+        <!-- Injected dynamically via script.js -->
+        <p>Select a piece to view project specifications, cinematographic notes, and auditory philosophy.</p>
+      </div>
+      <footer class="modal-footer">
+        <button type="button" class="btn btn-outline" id="modal-footer-close">Close Notes</button>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
