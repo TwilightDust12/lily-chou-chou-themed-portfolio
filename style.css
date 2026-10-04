@@ -553,11 +553,21 @@ button {
 }
 
 .brand-logo {
-  height: 38px;
+  height: 40px;
   width: auto;
-  object-fit: contain;
-  filter: var(--logo-filter);
-  transition: filter var(--transition-normal);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.brand-link:hover .brand-logo,
+.brand-link:focus-visible .brand-logo {
+  transform: scale(1.06);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .brand-text-group {
@@ -3047,9 +3057,19 @@ button {
 }
 
 .footer-logo {
-  height: 36px;
+  height: 42px;
   width: auto;
-  filter: brightness(0) invert(1);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.footer-brand-link:hover .footer-logo {
+  transform: scale(1.06);
+  border-color: var(--accent-primary);
 }
 
 .footer-brand-name {
