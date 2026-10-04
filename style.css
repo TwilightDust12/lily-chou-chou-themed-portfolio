@@ -206,62 +206,76 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 9990;
-  background-image: 
-    /* 1. Procedural 3-CCD Fractal Noise */
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
-    /* 2. CRT Interlaced Video Scanlines */
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 2px,
-      rgba(0, 0, 0, 0.1) 2px,
-      rgba(0, 0, 0, 0.1) 4px
-    ),
-    /* 3. Digicam Optical Lens Vignette */
-    radial-gradient(
-      circle at center,
-      transparent 50%,
-      rgba(0, 0, 0, 0.28) 85%,
-      rgba(0, 0, 0, 0.55) 100%
-    );
-  opacity: 0.65;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.25' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.030;
   mix-blend-mode: overlay;
   transition: opacity var(--transition-normal);
   will-change: opacity;
 }
 
 [data-theme="light"] .film-grain-overlay {
-  background-image: 
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 2px,
-      rgba(73, 109, 41, 0.05) 2px,
-      rgba(73, 109, 41, 0.05) 4px
-    ),
-    radial-gradient(
-      circle at center,
-      transparent 60%,
-      rgba(73, 109, 41, 0.15) 88%,
-      rgba(35, 55, 20, 0.4) 100%
-    );
-  opacity: 0.55;
+  opacity: 0.020;
   mix-blend-mode: multiply;
 }
 
-/* Subtle Chromatic Aberration Fringe (Optical Misalignment) */
+/* Subtle Digicam Optical Lens Vignette & CRT Sheen */
+.digicam-vignette {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9991;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.035) 3px,
+      rgba(0, 0, 0, 0.035) 4px
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 62%,
+      rgba(0, 0, 0, 0.22) 88%,
+      rgba(0, 0, 0, 0.44) 100%
+    );
+  mix-blend-mode: multiply;
+  transition: opacity var(--transition-normal);
+}
+
+[data-theme="light"] .digicam-vignette {
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(73, 109, 41, 0.02) 3px,
+      rgba(73, 109, 41, 0.02) 4px
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 68%,
+      rgba(73, 109, 41, 0.08) 90%,
+      rgba(35, 55, 20, 0.22) 100%
+    );
+  mix-blend-mode: multiply;
+}
+
+/* Subtle Chromatic Aberration Fringe (Soft Optical Misalignment) */
 body.digicam-active h1,
 body.digicam-active h2,
 body.digicam-active h3,
 body.digicam-active .section-tag,
-body.digicam-active .bbs-typewriter-text {
+body.digicam-active .bbs-typewriter-sender {
   text-shadow: 
-    0.4px 0 0.8px rgba(255, 60, 100, 0.28),
-    -0.4px 0 0.8px rgba(0, 210, 255, 0.28);
+    0.22px 0 0.4px rgba(255, 60, 100, 0.16),
+    -0.22px 0 0.4px rgba(0, 210, 255, 0.16);
 }
 
 body.digicam-disabled .film-grain-overlay,
+body.digicam-disabled .digicam-vignette,
 body.digicam-disabled .digicam-hud {
   display: none !important;
 }
