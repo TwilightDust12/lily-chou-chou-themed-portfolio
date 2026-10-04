@@ -9,10 +9,10 @@
   <meta name="theme-color" content="#070c18">
   <title>The Ether | Philia — Personal Portfolio &amp; Lily Chou-Chou Archive</title>
 
-  <!-- Google Fonts: Cinzel for cinematic titles, Inter for high-readability body, JetBrains Mono for cyber-code -->
+  <!-- Google Fonts: Shippori Mincho (Cinematic titles), Zen Kaku Gothic New (Poetic body), Space Mono (2001 BBS forum) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Relative Path to Stylesheet -->
   <link rel="stylesheet" href="./style.css">
@@ -120,51 +120,51 @@
       <div class="container hero-container">
         
         <!-- Hero Text & Value Proposition -->
+        <!-- Hero Text & Value Proposition -->
         <div class="hero-text-content">
           <div class="hero-badge-row">
-            <span class="hero-badge">Personal Portfolio &bull; Sound &amp; Code</span>
-            <span class="hero-subbadge">BBS Alias: Philia</span>
+            <span class="hero-badge">ARCHIVE // LILYHOLIC</span>
+            <span class="hero-subbadge">ALIAS: PHILIA (フィリア)</span>
+            <span class="hero-year-tag">EST. 2001</span>
           </div>
-          <h1 id="hero-title" class="hero-heading">Crafting Digital Sanctuaries in the Frequency of the Ether</h1>
+          <h1 id="hero-title" class="hero-heading">Digital Sanctuaries in the Frequency of the Ether</h1>
           <p class="hero-subtitle">
-            I am a creative developer, ambient sound designer, and digital archivist. Inspired by Shunji Iwai’s cinematic poetry, Noboru Shinoda’s evocative natural lighting, and the haunting melodies of Lily Chou-Chou, I build atmospheric web experiences that bring stillness to modern digital noise.
+            Creative developer, ambient sound designer, and archivist of digital stillness. Inspired by Shunji Iwai’s cinéma-vérité, Noboru Shinoda’s blinding natural sunlight, and the sacred frequencies of Lily Chou-Chou.
           </p>
           
           <div class="hero-cta-group">
             <a href="#projects" class="btn btn-primary" aria-label="Explore featured portfolio pieces">
-              <span>View Portfolio Pieces</span>
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+              <span>Enter Archives</span>
+              <span class="btn-kanji" aria-hidden="true">作品録</span>
             </a>
             <a href="#interactive" class="btn btn-outline" aria-label="Launch interactive audio terminal and archives">
-              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-              <span>Launch Ether Terminal</span>
+              <span class="discman-play-glyph" aria-hidden="true">▶</span>
+              <span>Discman Audio Unit</span>
             </a>
           </div>
 
-          <!-- Highlight Counters -->
-          <div class="hero-stats" role="region" aria-label="Portfolio Highlights">
-            <div class="stat-card">
-              <span class="stat-value">6+</span>
-              <span class="stat-label">Featured Works</span>
+          <!-- Lilyholic BBS Transmission Banner (Replacing SaaS metrics) -->
+          <div class="hero-transmission-banner" role="region" aria-label="BBS Transmission Archive">
+            <div class="transmission-header">
+              <span class="transmission-indicator">● BBS TRANSMISSION #0104</span>
+              <span class="transmission-meta">LOG: LILYHOLIC.NET [2001-08-14 17:04:12 JST]</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-value">96kHz</span>
-              <span class="stat-label">Lossless Ether Audio</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-value">5</span>
-              <span class="stat-label">Cinematic Horizons</span>
+            <blockquote class="transmission-quote">
+              <span class="quote-author">[Philia]</span>
+              <span class="quote-text">“The Ether is all around us. When Lily sings, the wound doesn’t disappear—it just resonates at a higher frequency. Is there Ether in your world?”</span>
+            </blockquote>
+            <div class="transmission-footer">
+              <span class="telemetry-tag">SAMPLING: 44.1kHz / 16-BIT LINEAR PCM</span>
+              <span class="telemetry-tag">TERMINAL: D-E01 PORTABLE UNIT</span>
             </div>
           </div>
 
-          <!-- Interactive Scenery Switcher Widget (Switching between background 1, 2, 3, 4, 5) -->
+          <!-- Interactive Horizon Frequency Tuner (Discman Tuner) -->
           <div class="scenery-selector-bar" role="region" aria-label="Select hero background scenery">
-            <span class="scenery-bar-label">Cinematic Horizon:</span>
+            <div class="scenery-bar-header">
+              <span class="scenery-bar-icon" aria-hidden="true">◉</span>
+              <span class="scenery-bar-label">HORIZON FREQUENCY TUNER:</span>
+            </div>
             <div class="scenery-pills-group" role="radiogroup" aria-label="Hero background scenery choices">
               <button 
                 type="button" 
@@ -174,8 +174,8 @@
                 role="radio" 
                 aria-checked="true" 
                 aria-label="Scene 01: Verdant Solitude (Summer Rice Field)">
-                <span class="scenery-dot" style="background-color: #4ade80;" aria-hidden="true"></span>
-                <span>01. Verdant Field</span>
+                <span class="scenery-code">[FREQ A]</span>
+                <span class="scenery-title">Verdant Field</span>
               </button>
               <button 
                 type="button" 
@@ -185,8 +185,8 @@
                 role="radio" 
                 aria-checked="false" 
                 aria-label="Scene 02: Concert Sanctuary (The Glowing Screen)">
-                <span class="scenery-dot" style="background-color: #38bdf8;" aria-hidden="true"></span>
-                <span>02. Concert Screen</span>
+                <span class="scenery-code">[FREQ B]</span>
+                <span class="scenery-title">Concert Screen</span>
               </button>
               <button 
                 type="button" 
@@ -196,19 +196,19 @@
                 role="radio" 
                 aria-checked="false" 
                 aria-label="Scene 03: Wounded Autumn (Twilight Horizon)">
-                <span class="scenery-dot" style="background-color: #c084fc;" aria-hidden="true"></span>
-                <span>03. Twilight Plain</span>
+                <span class="scenery-code">[FREQ C]</span>
+                <span class="scenery-title">Twilight Plain</span>
               </button>
               <button 
                 type="button" 
-                class="scenery-pill" 
                 data-bg="./assets/background4.jpg" 
                 data-name="Rural Pathway (Youth & Distance)" 
+                class="scenery-pill" 
                 role="radio" 
                 aria-checked="false" 
                 aria-label="Scene 04: Rural Pathway (Youth & Distance)">
-                <span class="scenery-dot" style="background-color: #a3e635;" aria-hidden="true"></span>
-                <span>04. Rural Pathway</span>
+                <span class="scenery-code">[FREQ D]</span>
+                <span class="scenery-title">Rural Pathway</span>
               </button>
               <button 
                 type="button" 
@@ -218,16 +218,33 @@
                 role="radio" 
                 aria-checked="false" 
                 aria-label="Scene 05: The Celestial Antenna (Transmission Tower)">
-                <span class="scenery-dot" style="background-color: #60a5fa;" aria-hidden="true"></span>
-                <span>05. Transmission Tower</span>
+                <span class="scenery-code">[FREQ E]</span>
+                <span class="scenery-title">Transmission Tower</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Hero Cinematic Imagery (hero.png) -->
+        <!-- Hero Cinematic Imagery with Sony HDW-F900 CineAlta Telemetry & Noboru Shinoda Net Filter -->
         <div class="hero-visual">
-          <div class="hero-image-wrapper">
+          <div class="hero-image-wrapper cinematic-letterbox">
+            <div class="scanline-overlay" aria-hidden="true"></div>
+            <div class="lens-haze-layer" aria-hidden="true"></div>
+            
+            <!-- Camera Viewfinder HUD (Sony HDW-F900 24p CineAlta) -->
+            <div class="viewfinder-hud-top" aria-hidden="true">
+              <div class="hud-left">
+                <span class="hud-rec-dot">● REC</span>
+                <span class="hud-fps">[23.98p CINEALTA]</span>
+              </div>
+              <div class="hud-right">
+                <span class="hdw-timecode" id="camera-timecode">TC 01:24:19:12</span>
+              </div>
+            </div>
+
+            <!-- Viewfinder Crosshair -->
+            <div class="viewfinder-crosshair" aria-hidden="true"></div>
+
             <img 
               src="./assets/hero.png" 
               alt="Listener Philia standing solitary amidst a boundless green rice field wearing headphones and holding a portable CD player" 
@@ -235,15 +252,43 @@
               width="600" 
               height="338"
               loading="eager">
+
+            <div class="cinematic-caption" aria-hidden="true">
+              <span class="aspect-ratio-tag">2.39:1 ANAMORPHIC</span>
+              <span class="film-stock-tag">SHINODA NET FILTER &bull; 35MM T1.3</span>
+            </div>
+
             <div class="now-playing-badge" aria-hidden="true">
               <span class="pulse-indicator"></span>
-              <span class="now-playing-text">Atmosphere: <strong id="hero-scenery-name">Verdant Solitude (Summer Rice Field)</strong></span>
+              <span class="now-playing-text">ATMOSPHERE: <strong id="hero-scenery-name">Verdant Solitude (Summer Rice Field)</strong></span>
             </div>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- ======================================================= -->
+    <!-- SIGNATURE FEATURE: LILYHOLIC 2000 LIVE BBS STREAM       -->
+    <!-- Recreating the film's iconic black-screen intertitles   -->
+    <!-- ======================================================= -->
+    <aside class="bbs-ticker-tape" role="region" aria-label="Lilyholic BBS Intertitle Stream">
+      <div class="container bbs-ticker-container">
+        <div class="bbs-ticker-badge">
+          <span class="ticker-live-dot" aria-hidden="true">●</span>
+          <span class="ticker-label">LILYHOLIC.NET // ARCHIVAL FEED</span>
+        </div>
+        <div class="bbs-ticker-message-box">
+          <span class="bbs-typewriter-sender" id="bbs-sender">[Philia]:</span>
+          <span class="bbs-typewriter-text" id="bbs-text">The Ether is all around us... Her music is the only place where the pain subsides.</span>
+          <span class="bbs-cursor" aria-hidden="true">_</span>
+        </div>
+        <div class="bbs-ticker-controls">
+          <button type="button" class="btn-ticker-nav" id="btn-prev-quote" aria-label="Previous BBS transmission">◀ PREV</button>
+          <button type="button" class="btn-ticker-nav" id="btn-next-quote" aria-label="Next BBS transmission">NEXT ▶</button>
+        </div>
+      </div>
+    </aside>
 
     <!-- ======================================================= -->
     <!-- 3. CORE CONTENT SECTION: ABOUT ME (With background4.jpg)-->
@@ -374,10 +419,10 @@
     <section class="skills-section" id="skills" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Competencies &amp; Toolkit</span>
-          <h2 id="skills-heading" class="section-title">Creative &amp; Technical Capabilities</h2>
+          <span class="section-tag">DISCIPLINES // 波動・技術</span>
+          <h2 id="skills-heading" class="section-title">Ether Disciplines &amp; Technical Matrix</h2>
           <p class="section-lead">
-            Combining empathetic artistic vision with clean, robust engineering to deliver memorable digital artifacts.
+            Harmonizing early-2000s cyber-solitude with pristine frontend standards, spatial audio architecture, and cinematic color science.
           </p>
         </div>
 
@@ -385,76 +430,76 @@
           <!-- Skill 1 -->
           <article class="skill-card">
             <div class="skill-header">
-              <span class="skill-category">Frontend Architecture</span>
-              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+              <span class="skill-category">[CH-01: ARCHITECTURE]</span>
+              <span class="skill-level" aria-label="Discipline focus: Foundation">Semantic W3C</span>
             </div>
-            <h3 class="skill-title">Semantic HTML5 &amp; Accessibility</h3>
+            <h3 class="skill-title">Accessible HTML5 Standards</h3>
             <p class="skill-text">
               Strict adherence to W3C standards, WCAG 2.1 AA accessible landmarks, ARIA role mapping, and keyboard focus management.
             </p>
             <ul class="skill-tags" aria-label="Tags for HTML &amp; Accessibility">
-              <li>WCAG 2.1</li>
-              <li>ARIA Landmarks</li>
-              <li>SEO Semantic</li>
+              <li>WCAG 2.1 AA</li>
+              <li>ARIA Semantics</li>
+              <li>Clean DOM</li>
             </ul>
           </article>
 
           <!-- Skill 2 -->
           <article class="skill-card">
             <div class="skill-header">
-              <span class="skill-category">Visual Styling</span>
-              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+              <span class="skill-category">[CH-02: STYLING]</span>
+              <span class="skill-level" aria-label="Discipline focus: Aesthetics">Visual Poetry</span>
             </div>
-            <h3 class="skill-title">Modern CSS3, Grid &amp; Theming</h3>
+            <h3 class="skill-title">Modern CSS3, Tokens &amp; Grid</h3>
             <p class="skill-text">
-              Fluid responsive layouts, CSS Custom Properties, smooth cubic-bezier transitions, glassmorphic filters, and Dark/Light modes.
+              Fluid responsive layouts, CSS Custom Properties, smooth cubic-bezier transitions, CRT scanline filters, and Dark/Light modes.
             </p>
             <ul class="skill-tags" aria-label="Tags for CSS &amp; Theming">
-              <li>CSS Grid</li>
-              <li>Flexbox</li>
+              <li>CSS Grid / Flex</li>
               <li>Tokens (:root)</li>
+              <li>CRT Scanlines</li>
             </ul>
           </article>
 
           <!-- Skill 3 -->
           <article class="skill-card">
             <div class="skill-header">
-              <span class="skill-category">Scripting &amp; Logic</span>
-              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+              <span class="skill-category">[CH-03: LOGIC]</span>
+              <span class="skill-level" aria-label="Discipline focus: Engineering">Zero-Dep</span>
             </div>
-            <h3 class="skill-title">Vanilla JavaScript (ES6+)</h3>
+            <h3 class="skill-title">Modular Vanilla JS (ES6+)</h3>
             <p class="skill-text">
               Lightweight, modular, event-driven interactions, DOM state manipulation, modal controllers, and asynchronous data flows.
             </p>
             <ul class="skill-tags" aria-label="Tags for JavaScript">
               <li>ES6 Modules</li>
               <li>Event-Driven</li>
-              <li>Zero-Dep</li>
+              <li>Zero External Libs</li>
             </ul>
           </article>
 
           <!-- Skill 4 -->
           <article class="skill-card">
             <div class="skill-header">
-              <span class="skill-category">Sound &amp; Music</span>
-              <span class="skill-level" aria-label="Skill level: Intermediate-High">Specialist</span>
+              <span class="skill-category">[CH-04: ACOUSTICS]</span>
+              <span class="skill-level" aria-label="Discipline focus: Audio">Synthesis</span>
             </div>
-            <h3 class="skill-title">Ambient Sound Design</h3>
+            <h3 class="skill-title">Ambient Web Audio Design</h3>
             <p class="skill-text">
               Field recording synthesis, analogue tape warmth modeling, Debussy modal harmonies, and reactive audio visualizer development.
             </p>
             <ul class="skill-tags" aria-label="Tags for Sound Design">
-              <li>Audio Visualizer</li>
-              <li>Atmosphere</li>
-              <li>Soundscapes</li>
+              <li>Web Audio API</li>
+              <li>Pentatonic Scales</li>
+              <li>Spectrum Bars</li>
             </ul>
           </article>
 
           <!-- Skill 5 -->
           <article class="skill-card">
             <div class="skill-header">
-              <span class="skill-category">Cinematic Arts</span>
-              <span class="skill-level" aria-label="Skill level: Advanced">Specialist</span>
+              <span class="skill-category">[CH-05: CINEMA]</span>
+              <span class="skill-level" aria-label="Discipline focus: Vision">Shinoda Homage</span>
             </div>
             <h3 class="skill-title">Cinematography &amp; Color Art</h3>
             <p class="skill-text">
@@ -462,25 +507,25 @@
             </p>
             <ul class="skill-tags" aria-label="Tags for Cinematography">
               <li>Noboru Shinoda</li>
-              <li>Color Grade</li>
-              <li>Visual Poetry</li>
+              <li>Solar Exposure</li>
+              <li>Anamorphic 2.39:1</li>
             </ul>
           </article>
 
           <!-- Skill 6 -->
           <article class="skill-card">
             <div class="skill-header">
-              <span class="skill-category">UI/UX Strategy</span>
-              <span class="skill-level" aria-label="Skill level: Advanced">Mastery</span>
+              <span class="skill-category">[CH-06: INTERACTION]</span>
+              <span class="skill-level" aria-label="Discipline focus: Culture">BBS Sanctuary</span>
             </div>
             <h3 class="skill-title">Atmospheric Interface Design</h3>
             <p class="skill-text">
               Harmonizing nostalgic digital bulletin-board nostalgia with modern high-conversion UI patterns and fluid motion choreography.
             </p>
             <ul class="skill-tags" aria-label="Tags for UI/UX Design">
-              <li>Interactive UX</li>
-              <li>Micro-Interactions</li>
               <li>BBS Heritage</li>
+              <li>Tactile Controls</li>
+              <li>Restraint &amp; Stillness</li>
             </ul>
           </article>
         </div>
@@ -494,180 +539,222 @@
     <section class="projects-section" id="projects" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Portfolio Showcase</span>
-          <h2 id="projects-heading" class="section-title">Featured Portfolio Works</h2>
+          <span class="section-tag">LILYHOLIC BBS ARCHIVES // 作品録</span>
+          <h2 id="projects-heading" class="section-title">The Ether Repository: Selected Archives</h2>
           <p class="section-lead">
-            Explore curated creative pieces spanning interactive sound consoles, cinematographic studies, and web architecture.
+            Catalogue raisonné of digital sanctuaries, acoustic synthesizers, and cinematographic studies. Preserved from the 2001 BBS era.
           </p>
         </div>
 
         <div class="projects-grid">
           <!-- Project 1: Glide Melodic Player -->
-          <article class="project-card" aria-labelledby="proj-1-title">
-            <header class="project-header">
-              <span class="project-tag">Interactive Audio / Web App</span>
-              <span class="project-year">2026</span>
-            </header>
-            <div class="project-body">
-              <h3 id="proj-1-title" class="project-title">Project Glide: The Ether Audio Station</h3>
-              <p class="project-desc">
-                A custom-built vanilla web audio interface reproducing the tactile feel of an early 2000s Discman. Features dynamic spectrum frequency animation, timeline scrubbing, and lossless streaming.
-              </p>
-              <ul class="project-spec-list" aria-label="Key specifications for Project Glide">
-                <li><span class="spec-highlight">Tech:</span> Vanilla JS &bull; CSS Custom Properties &bull; Audio API</li>
-                <li><span class="spec-highlight">Aesthetic:</span> Ethereal Blue &bull; Minimalist LCD Emulation</li>
-              </ul>
+          <article class="project-card bbs-thread-card" aria-labelledby="proj-1-title">
+            <div class="bbs-kanji-pillar" aria-hidden="true">呼吸</div>
+            <div class="bbs-card-main">
+              <header class="project-header bbs-thread-header">
+                <div class="bbs-meta-group">
+                  <span class="bbs-thread-id">[POST #0101]</span>
+                  <span class="bbs-author">AUTHOR: PHILIA</span>
+                  <span class="bbs-time">2001.08.17 02:44 JST</span>
+                </div>
+                <span class="project-tag">Interactive Audio // Web App</span>
+              </header>
+              <div class="project-body">
+                <h3 id="proj-1-title" class="project-title">Project Glide: The Ether Audio Station</h3>
+                <p class="project-desc">
+                  A custom vanilla web audio interface reproducing the tactile sonic presence of an early-2000s Discman. Features dynamic spectrum frequency animation, timeline scrubbing, and lossless linear PCM streaming.
+                </p>
+                <ul class="project-spec-list" aria-label="Key specifications for Project Glide">
+                  <li><span class="spec-highlight">Architecture:</span> Vanilla JS &bull; Web Audio API &bull; CSS Custom Tokens</li>
+                  <li><span class="spec-highlight">Atmosphere:</span> Claude Debussy Pentatonics &bull; Minimalist LCD Emulation</li>
+                </ul>
+              </div>
+              <footer class="project-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-text open-modal-btn" 
+                  data-track="glide" 
+                  aria-label="View case study and liner notes for Project Glide">
+                  <span>Archival Liner Notes</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </footer>
             </div>
-            <footer class="project-footer">
-              <button 
-                type="button" 
-                class="btn btn-text open-modal-btn" 
-                data-track="glide" 
-                aria-label="View case study and liner notes for Project Glide">
-                <span>View Case Study &amp; Notes</span>
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            </footer>
           </article>
 
           <!-- Project 2: Resonance BBS Archive -->
-          <article class="project-card" aria-labelledby="proj-2-title">
-            <header class="project-header">
-              <span class="project-tag">Web Platform / Community</span>
-              <span class="project-year">2025</span>
-            </header>
-            <div class="project-body">
-              <h3 id="proj-2-title" class="project-title">Resonance BBS: Digital Solitude Forum</h3>
-              <p class="project-desc">
-                An authentic recreation of the web forum interface from <em>All About Lily Chou-Chou</em>. Monochromatic text over green and obsidian backdrops where users shared raw poetry and anonymous memories.
-              </p>
-              <ul class="project-spec-list" aria-label="Key specifications for Resonance BBS">
-                <li><span class="spec-highlight">Tech:</span> Accessible HTML5 &bull; CSS Grid &bull; Local Storage</li>
-                <li><span class="spec-highlight">Aesthetic:</span> 2001 Cyber Nostalgia &bull; High Contrast</li>
-              </ul>
+          <article class="project-card bbs-thread-card" aria-labelledby="proj-2-title">
+            <div class="bbs-kanji-pillar" aria-hidden="true">共鳴</div>
+            <div class="bbs-card-main">
+              <header class="project-header bbs-thread-header">
+                <div class="bbs-meta-group">
+                  <span class="bbs-thread-id">[POST #0102]</span>
+                  <span class="bbs-author">AUTHOR: BLUE CAT</span>
+                  <span class="bbs-time">2001.08.23 23:19 JST</span>
+                </div>
+                <span class="project-tag">Web Platform // Community</span>
+              </header>
+              <div class="project-body">
+                <h3 id="proj-2-title" class="project-title">Resonance BBS: Digital Solitude Forum</h3>
+                <p class="project-desc">
+                  An authentic recreation of the web forum interface from <em>All About Lily Chou-Chou</em>. Monochromatic text over green and obsidian backdrops where users shared raw poetry and anonymous memories.
+                </p>
+                <ul class="project-spec-list" aria-label="Key specifications for Resonance BBS">
+                  <li><span class="spec-highlight">Architecture:</span> Accessible HTML5 &bull; CSS Grid &bull; Local Storage</li>
+                  <li><span class="spec-highlight">Atmosphere:</span> 2001 Cyber Nostalgia &bull; High Contrast Text</li>
+                </ul>
+              </div>
+              <footer class="project-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-text open-modal-btn" 
+                  data-track="kyoumei" 
+                  aria-label="View case study for Resonance BBS">
+                  <span>Archival Liner Notes</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </footer>
             </div>
-            <footer class="project-footer">
-              <button 
-                type="button" 
-                class="btn btn-text open-modal-btn" 
-                data-track="kyoumei" 
-                aria-label="View case study for Resonance BBS">
-                <span>View Case Study &amp; Notes</span>
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            </footer>
           </article>
 
           <!-- Project 3: Kokyuu Sound Architecture -->
-          <article class="project-card" aria-labelledby="proj-3-title">
-            <header class="project-header">
-              <span class="project-tag">Sound Design / Spatial Audio</span>
-              <span class="project-year">2025</span>
-            </header>
-            <div class="project-body">
-              <h3 id="proj-3-title" class="project-title">Kokyuu (Breathe) Sound Experience</h3>
-              <p class="project-desc">
-                An ambient sound suite deconstructing the track &ldquo;Kokyuu&rdquo;. Combines binaural field recordings of wind whispering through Kanto rice stalks with acoustic cello and Debussy-style piano chords.
-              </p>
-              <ul class="project-spec-list" aria-label="Key specifications for Kokyuu Sound Architecture">
-                <li><span class="spec-highlight">Tech:</span> Binaural Field Audio &bull; Analog Tape Master</li>
-                <li><span class="spec-highlight">Aesthetic:</span> Claude Debussy &bull; Salyu Harmonics</li>
-              </ul>
+          <article class="project-card bbs-thread-card" aria-labelledby="proj-3-title">
+            <div class="bbs-kanji-pillar" aria-hidden="true">回復</div>
+            <div class="bbs-card-main">
+              <header class="project-header bbs-thread-header">
+                <div class="bbs-meta-group">
+                  <span class="bbs-thread-id">[POST #0103]</span>
+                  <span class="bbs-author">AUTHOR: CORINE</span>
+                  <span class="bbs-time">2001.09.02 14:08 JST</span>
+                </div>
+                <span class="project-tag">Sound Design // Spatial Audio</span>
+              </header>
+              <div class="project-body">
+                <h3 id="proj-3-title" class="project-title">Kokyuu (Breathe) Sound Experience</h3>
+                <p class="project-desc">
+                  An ambient sound suite deconstructing the track &ldquo;Kokyuu&rdquo;. Combines binaural field recordings of wind whispering through Kanto rice stalks with acoustic cello and Debussy-style piano chords.
+                </p>
+                <ul class="project-spec-list" aria-label="Key specifications for Kokyuu Sound Architecture">
+                  <li><span class="spec-highlight">Architecture:</span> Binaural Field Audio &bull; Analog Tape Master</li>
+                  <li><span class="spec-highlight">Atmosphere:</span> Claude Debussy &bull; Salyu Harmonics</li>
+                </ul>
+              </div>
+              <footer class="project-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-text open-modal-btn" 
+                  data-track="kaifuku" 
+                  aria-label="View case study for Kokyuu Sound Experience">
+                  <span>Archival Liner Notes</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </footer>
             </div>
-            <footer class="project-footer">
-              <button 
-                type="button" 
-                class="btn btn-text open-modal-btn" 
-                data-track="kaifuku" 
-                aria-label="View case study for Kokyuu Sound Experience">
-                <span>View Case Study &amp; Notes</span>
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            </footer>
           </article>
 
           <!-- Project 4: Shinoda Cinematic Lens Study -->
-          <article class="project-card" aria-labelledby="proj-4-title">
-            <header class="project-header">
-              <span class="project-tag">Cinematography / Visual Art</span>
-              <span class="project-year">2024</span>
-            </header>
-            <div class="project-body">
-              <h3 id="proj-4-title" class="project-title">Verdant Solitude: Photographic Essay</h3>
-              <p class="project-desc">
-                A high-resolution visual narrative captured on digital cinema lenses paying homage to Noboru Shinoda’s cinematography. Capturing solitary subjects bathed in summer sun amidst rice fields.
-              </p>
-              <ul class="project-spec-list" aria-label="Key specifications for Verdant Solitude">
-                <li><span class="spec-highlight">Tech:</span> High Dynamic Range &bull; Color Science LUTs</li>
-                <li><span class="spec-highlight">Aesthetic:</span> Lens Flares &bull; Saturated Verdant Green</li>
-              </ul>
+          <article class="project-card bbs-thread-card" aria-labelledby="proj-4-title">
+            <div class="bbs-kanji-pillar" aria-hidden="true">田園</div>
+            <div class="bbs-card-main">
+              <header class="project-header bbs-thread-header">
+                <div class="bbs-meta-group">
+                  <span class="bbs-thread-id">[POST #0104]</span>
+                  <span class="bbs-author">AUTHOR: PHILIA</span>
+                  <span class="bbs-time">2001.09.11 18:30 JST</span>
+                </div>
+                <span class="project-tag">Cinematography // Visual Art</span>
+              </header>
+              <div class="project-body">
+                <h3 id="proj-4-title" class="project-title">Verdant Solitude: Photographic Essay</h3>
+                <p class="project-desc">
+                  A visual narrative captured on digital cinema lenses paying homage to Noboru Shinoda’s cinematography. Capturing solitary subjects bathed in summer sun amidst boundless rice fields.
+                </p>
+                <ul class="project-spec-list" aria-label="Key specifications for Verdant Solitude">
+                  <li><span class="spec-highlight">Architecture:</span> High Dynamic Range &bull; Color Science LUTs</li>
+                  <li><span class="spec-highlight">Atmosphere:</span> Solar Overexposure &bull; Saturated Verdant Green</li>
+                </ul>
+              </div>
+              <footer class="project-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-text open-modal-btn" 
+                  data-track="tsubasa" 
+                  aria-label="View case study for Verdant Solitude">
+                  <span>Archival Liner Notes</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </footer>
             </div>
-            <footer class="project-footer">
-              <button 
-                type="button" 
-                class="btn btn-text open-modal-btn" 
-                data-track="tsubasa" 
-                aria-label="View case study for Verdant Solitude">
-                <span>View Case Study &amp; Notes</span>
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            </footer>
           </article>
 
           <!-- Project 5: The Blue Ether Protocol -->
-          <article class="project-card" aria-labelledby="proj-5-title">
-            <header class="project-header">
-              <span class="project-tag">Generative Art / Canvas</span>
-              <span class="project-year">2024</span>
-            </header>
-            <div class="project-body">
-              <h3 id="proj-5-title" class="project-title">The Blue Ether Generative Canvas</h3>
-              <p class="project-desc">
-                An interactive real-time particle simulation responding to microtonal sound input. Simulates the flow of &ldquo;Ether waves&rdquo; transitioning from dissonant red to soothing, healing blue.
-              </p>
-              <ul class="project-spec-list" aria-label="Key specifications for The Blue Ether Protocol">
-                <li><span class="spec-highlight">Tech:</span> HTML5 Canvas &bull; Mathematical Physics Engine</li>
-                <li><span class="spec-highlight">Aesthetic:</span> Fluid Dynamics &bull; Phosphor Glow</li>
-              </ul>
+          <article class="project-card bbs-thread-card" aria-labelledby="proj-5-title">
+            <div class="bbs-kanji-pillar" aria-hidden="true">飽和</div>
+            <div class="bbs-card-main">
+              <header class="project-header bbs-thread-header">
+                <div class="bbs-meta-group">
+                  <span class="bbs-thread-id">[POST #0105]</span>
+                  <span class="bbs-author">AUTHOR: BLUE CAT</span>
+                  <span class="bbs-time">2001.10.05 03:15 JST</span>
+                </div>
+                <span class="project-tag">Generative Art // Canvas</span>
+              </header>
+              <div class="project-body">
+                <h3 id="proj-5-title" class="project-title">The Blue Ether Generative Canvas</h3>
+                <p class="project-desc">
+                  An interactive real-time particle simulation responding to microtonal sound input. Simulates the flow of &ldquo;Ether waves&rdquo; transitioning from dissonant red to soothing, healing blue.
+                </p>
+                <ul class="project-spec-list" aria-label="Key specifications for The Blue Ether Protocol">
+                  <li><span class="spec-highlight">Architecture:</span> HTML5 Canvas &bull; Particle Physics Engine</li>
+                  <li><span class="spec-highlight">Atmosphere:</span> Fluid Dynamics &bull; CRT Phosphor Glow</li>
+                </ul>
+              </div>
+              <footer class="project-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-text open-modal-btn" 
+                  data-track="houwa" 
+                  aria-label="View case study for The Blue Ether Protocol">
+                  <span>Archival Liner Notes</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </footer>
             </div>
-            <footer class="project-footer">
-              <button 
-                type="button" 
-                class="btn btn-text open-modal-btn" 
-                data-track="houwa" 
-                aria-label="View case study for The Blue Ether Protocol">
-                <span>View Case Study &amp; Notes</span>
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            </footer>
           </article>
 
           <!-- Project 6: Arabesque No. 1 Interactive -->
-          <article class="project-card" aria-labelledby="proj-6-title">
-            <header class="project-header">
-              <span class="project-tag">Musicology / Web Interactive</span>
-              <span class="project-year">2024</span>
-            </header>
-            <div class="project-body">
-              <h3 id="proj-6-title" class="project-title">Debussy to Chou-Chou: Harmonic Bridges</h3>
-              <p class="project-desc">
-                An educational interactive article analyzing how Claude Debussy's Impressionist scales directly influenced Takeshi Kobayashi’s chord structures and Lily Chou-Chou’s vocal modulations.
-              </p>
-              <ul class="project-spec-list" aria-label="Key specifications for Arabesque No. 1 Interactive">
-                <li><span class="spec-highlight">Tech:</span> Interactive SVG Score &bull; Sound Synthesis</li>
-                <li><span class="spec-highlight">Aesthetic:</span> French Impressionism &bull; J-Alt Rock</li>
-              </ul>
+          <article class="project-card bbs-thread-card" aria-labelledby="proj-6-title">
+            <div class="bbs-kanji-pillar" aria-hidden="true">印象</div>
+            <div class="bbs-card-main">
+              <header class="project-header bbs-thread-header">
+                <div class="bbs-meta-group">
+                  <span class="bbs-thread-id">[POST #0106]</span>
+                  <span class="bbs-author">AUTHOR: PHILIA</span>
+                  <span class="bbs-time">2001.10.17 21:00 JST</span>
+                </div>
+                <span class="project-tag">Musicology // Web Interactive</span>
+              </header>
+              <div class="project-body">
+                <h3 id="proj-6-title" class="project-title">Debussy to Chou-Chou: Harmonic Bridges</h3>
+                <p class="project-desc">
+                  An educational interactive article analyzing how Claude Debussy's Impressionist scales directly influenced Takeshi Kobayashi’s chord structures and Lily Chou-Chou’s vocal modulations.
+                </p>
+                <ul class="project-spec-list" aria-label="Key specifications for Arabesque No. 1 Interactive">
+                  <li><span class="spec-highlight">Architecture:</span> Interactive SVG Score &bull; Sound Synthesis</li>
+                  <li><span class="spec-highlight">Atmosphere:</span> French Impressionism &bull; J-Alt Rock</li>
+                </ul>
+              </div>
+              <footer class="project-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-text open-modal-btn" 
+                  data-track="glide-single" 
+                  aria-label="View case study for Debussy to Chou-Chou">
+                  <span>Archival Liner Notes</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </footer>
             </div>
-            <footer class="project-footer">
-              <button 
-                type="button" 
-                class="btn btn-text open-modal-btn" 
-                data-track="glide-single" 
-                aria-label="View case study for Debussy to Chou-Chou">
-                <span>View Case Study &amp; Notes</span>
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            </footer>
           </article>
         </div>
       </div>
@@ -816,27 +903,99 @@
             </article>
           </div>
 
-          <!-- Component 2: Simulated Disc Player & Audio Visualizer with Integrated Motion Screen (hi.gif) -->
-          <div class="player-console" role="region" aria-label="Interactive Music Player Simulation">
+          <!-- Component 2: Dynamic Tactile Discman Optical System (Web Audio API Synthesizer) -->
+          <div class="player-console discman-unit" id="discman-chassis" role="region" aria-label="Dynamic Tactile Discman Optical System">
+            <!-- Hardware Chassis Top Bar with Door Eject & Telemetry -->
+            <div class="discman-chassis-top">
+              <div class="discman-brand-group">
+                <span class="discman-brand">OPTICAL DISC SYSTEM // SONY D-E01 ARCHIVE</span>
+                <span class="discman-disc-spinning-icon" id="disc-spin-indicator" aria-hidden="true">( ( ◎ ) )</span>
+              </div>
+              <div class="discman-top-actions">
+                <span class="discman-esp-badge" id="esp-status-badge">ESP: 45s BUFFER [■■■■■■■■□□]</span>
+                <button type="button" class="btn-discman-eject" id="btn-disc-eject" aria-label="Open or close CD door">
+                  <span class="eject-glyph" aria-hidden="true">▲</span>
+                  <span class="eject-label" id="eject-btn-label">OPEN LID</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Discman LCD Telemetry Bar -->
             <div class="player-header">
               <div class="player-status">
                 <span class="player-led" aria-hidden="true"></span>
                 <span id="player-status-text">DISC LOADED: READY</span>
               </div>
-              <div class="player-time" id="player-time-display" aria-label="Playback timestamp">00:00 / 03:41</div>
+              <div class="player-time-group">
+                <span class="player-sample-rate">16-BIT 44.1kHz</span>
+                <div class="player-time" id="player-time-display" aria-label="Playback timestamp">00:00 / 03:41</div>
+              </div>
             </div>
 
-            <!-- Integrated Visual Screen Display (hi.gif) -->
-            <div class="player-visual-screen" id="player-visual-screen" aria-label="Now Playing Motion Screen">
-              <img 
-                src="./assets/hi.gif" 
-                alt="Animated scene from the film depicting Tsuda spinning with outstretched arms in the green field" 
-                class="player-screen-media" 
-                width="250" 
-                height="213">
-              <div class="player-screen-overlay" aria-hidden="true">
-                <span class="screen-scanlines"></span>
-                <span class="screen-track-indicator">TRACK 01: GLIDE &bull; 44.1kHz DIGITAL ETHER</span>
+            <!-- Viewport Switcher Tabs (Spindle Drive vs Motion Screen vs Oscilloscope) -->
+            <div class="discman-viewport-tabs" role="tablist" aria-label="Disc player view modes">
+              <button type="button" class="viewport-tab active" id="tab-spindle" role="tab" aria-selected="true" aria-controls="view-spindle">
+                <span>CD SPINDLE DRIVE</span>
+              </button>
+              <button type="button" class="viewport-tab" id="tab-motion" role="tab" aria-selected="false" aria-controls="view-motion">
+                <span>CRT MOTION SCREEN</span>
+              </button>
+              <button type="button" class="viewport-tab" id="tab-scope" role="tab" aria-selected="false" aria-controls="view-scope">
+                <span>LIVE OSCILLOSCOPE</span>
+              </button>
+            </div>
+
+            <!-- Viewport Container -->
+            <div class="discman-viewport-stage">
+              <!-- View 1: Physical Spinning Compact Disc Spindle Bay -->
+              <div class="viewport-panel view-spindle-panel active" id="view-spindle" role="tabpanel" aria-labelledby="tab-spindle">
+                <div class="cd-spindle-bay" id="cd-spindle-bay">
+                  <div class="optical-laser-head" id="laser-head" aria-hidden="true">
+                    <span class="laser-lens-diode"></span>
+                    <span class="laser-sled-label">OPTICAL PICKUP</span>
+                  </div>
+                  <!-- The Spinning CD Disc -->
+                  <div class="compact-disc" id="physical-compact-disc" aria-hidden="true">
+                    <div class="cd-outer-rim"></div>
+                    <div class="cd-rainbow-sheen"></div>
+                    <div class="cd-silk-screen">
+                      <span class="cd-logo">Ç</span>
+                      <span class="cd-album-print" id="cd-print-album">KOKYUU</span>
+                      <span class="cd-track-print" id="cd-print-track">GLIDE</span>
+                    </div>
+                    <div class="cd-inner-mirror"></div>
+                    <div class="cd-center-hole"></div>
+                  </div>
+                  <!-- Door Open Warning Overlay -->
+                  <div class="cd-lid-overlay" id="cd-lid-open-indicator" hidden>
+                    <span class="lid-warning-text">LID OPEN // INSERT COMPACT DISC</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- View 2: CRT Motion Screen (hi.gif) -->
+              <div class="viewport-panel view-motion-panel" id="view-motion" role="tabpanel" aria-labelledby="tab-motion" hidden>
+                <div class="player-visual-screen" id="player-visual-screen">
+                  <img 
+                    src="./assets/hi.gif" 
+                    alt="Animated scene from the film depicting Tsuda spinning with outstretched arms in the green field" 
+                    class="player-screen-media" 
+                    width="250" 
+                    height="213">
+                  <div class="player-screen-overlay" aria-hidden="true">
+                    <span class="screen-scanlines"></span>
+                    <span class="screen-track-indicator" id="motion-track-indicator">TRACK 01: GLIDE &bull; 44.1kHz DIGITAL ETHER</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- View 3: Live Web Audio Oscilloscope Canvas -->
+              <div class="viewport-panel view-scope-panel" id="view-scope" role="tabpanel" aria-labelledby="tab-scope" hidden>
+                <div class="oscilloscope-screen">
+                  <canvas id="discman-oscilloscope" width="340" height="170" aria-label="Live audio frequency oscilloscope canvas"></canvas>
+                  <div class="scope-grid-overlay" aria-hidden="true"></div>
+                  <span class="scope-telemetry-tag">LIVE FFT // PHOSPHOR TRACE</span>
+                </div>
               </div>
             </div>
 
@@ -845,7 +1004,7 @@
               <p class="player-track-sub" id="current-track-album">Album: Kokyuu (呼吸) • Track 01</p>
             </div>
 
-            <!-- Equalizer / Visualizer Bars -->
+            <!-- Dynamic Equalizer / Visualizer Bars (Real-time reactive) -->
             <div class="player-visualizer" id="audio-visualizer" aria-hidden="true">
               <div class="vis-bar"></div>
               <div class="vis-bar"></div>
@@ -861,30 +1020,27 @@
               <div class="vis-bar"></div>
             </div>
 
-            <!-- Playback Controls -->
+            <!-- Tactile Discman Playback Controls -->
             <div class="player-controls">
               <button type="button" class="ctrl-btn" id="ctrl-prev" aria-label="Previous Track">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="19 20 9 12 19 4 19 20"></polygon>
-                  <line x1="5" y1="19" x2="5" y2="5"></line>
-                </svg>
+                <span class="ctrl-symbol" aria-hidden="true">◀◀</span>
+                <span class="ctrl-label">PREV</span>
               </button>
 
               <button type="button" class="ctrl-btn ctrl-play" id="ctrl-play" aria-label="Play current track">
-                <svg class="icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-                <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" style="display: none;">
-                  <rect x="6" y="4" width="4" height="16"></rect>
-                  <rect x="14" y="4" width="4" height="16"></rect>
-                </svg>
+                <span class="icon-play ctrl-symbol" aria-hidden="true">▶</span>
+                <span class="icon-pause ctrl-symbol" aria-hidden="true" style="display: none;">❚❚</span>
+                <span class="ctrl-label" id="ctrl-play-label">PLAY</span>
+              </button>
+
+              <button type="button" class="ctrl-btn ctrl-stop" id="ctrl-stop" aria-label="Stop playback">
+                <span class="ctrl-symbol" aria-hidden="true">■</span>
+                <span class="ctrl-label">STOP</span>
               </button>
 
               <button type="button" class="ctrl-btn" id="ctrl-next" aria-label="Next Track">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="5 4 15 12 5 20 5 4"></polygon>
-                  <line x1="19" y1="5" x2="19" y2="19"></line>
-                </svg>
+                <span class="ctrl-symbol" aria-hidden="true">▶▶</span>
+                <span class="ctrl-label">NEXT</span>
               </button>
             </div>
 
@@ -903,6 +1059,56 @@
                 aria-valuemax="100" 
                 aria-valuenow="0">
             </div>
+
+            <!-- Tactile Hardware Output Volume Control -->
+            <div class="discman-volume-row">
+              <span class="volume-label">OUTPUT VOL:</span>
+              <input 
+                type="range" 
+                id="discman-volume" 
+                class="volume-slider" 
+                min="0" 
+                max="100" 
+                value="75" 
+                aria-label="Master output volume">
+              <span class="volume-value-text" id="volume-val-display">75%</span>
+            </div>
+
+            <!-- Discography Jewel Case Rack: Click to Insert CD -->
+            <div class="cd-jewel-case-rack" role="region" aria-label="CD Jewel Case Rack — Select Disc to Load">
+              <div class="rack-header">
+                <span class="rack-title">DISC VAULT // SELECT CD TO LOAD:</span>
+                <span class="rack-hint">Click a CD to insert it into spindle</span>
+              </div>
+              <div class="rack-grid" role="radiogroup" aria-label="Selectable CDs">
+                <button type="button" class="jewel-case active" data-track-index="0" role="radio" aria-checked="true">
+                  <span class="jewel-spine">[CD 01]</span>
+                  <span class="jewel-title">Kokyuu (呼吸)</span>
+                  <span class="jewel-track">"Glide"</span>
+                </button>
+                <button type="button" class="jewel-case" data-track-index="1" role="radio" aria-checked="false">
+                  <span class="jewel-spine">[CD 02]</span>
+                  <span class="jewel-title">Kyoumei Single</span>
+                  <span class="jewel-track">"Resonance"</span>
+                </button>
+                <button type="button" class="jewel-case" data-track-index="2" role="radio" aria-checked="false">
+                  <span class="jewel-spine">[CD 03]</span>
+                  <span class="jewel-title">Kaifuku Suru Kizu</span>
+                  <span class="jewel-track">"Restoration"</span>
+                </button>
+                <button type="button" class="jewel-case" data-track-index="3" role="radio" aria-checked="false">
+                  <span class="jewel-spine">[CD 04]</span>
+                  <span class="jewel-title">Tsubasa wo Kudasai</span>
+                  <span class="jewel-track">"Prayer"</span>
+                </button>
+                <button type="button" class="jewel-case" data-track-index="4" role="radio" aria-checked="false">
+                  <span class="jewel-spine">[CD 05]</span>
+                  <span class="jewel-title">Houwa (飽和)</span>
+                  <span class="jewel-track">"Saturation"</span>
+                </button>
+              </div>
+            </div>
+          </div>
           </div>
 
           <!-- Component 3: FAQ / Lore Accordion -->
@@ -998,10 +1204,10 @@
     <section class="contact-section" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Direct Transmission</span>
-          <h2 id="contact-heading" class="section-title">Initiate Contact with Philia</h2>
+          <span class="section-tag">TRANSMISSION TERMINAL // 通信送信</span>
+          <h2 id="contact-heading" class="section-title">Dispatch Transmission to Philia</h2>
           <p class="section-lead">
-            Whether you have a creative collaboration proposal, audio-visual inquiry, or simply wish to share thoughts across the Ether, dispatch your message below.
+            Whether for creative web collaborations, spatial sound inquiries, or shared thoughts across the frequency of the Ether.
           </p>
         </div>
 
@@ -1016,7 +1222,7 @@
                 </svg>
               </div>
               <div class="contact-card-info">
-                <h3 class="contact-card-title">Electronic Mail</h3>
+                <h3 class="contact-card-title">Electronic Mail / SMTP</h3>
                 <p class="contact-card-desc">For commissions and collaboration inquiries:</p>
                 <a href="mailto:philia@the-ether.sanctuary" class="contact-card-link">philia@the-ether.sanctuary</a>
               </div>
@@ -1031,7 +1237,7 @@
               <div class="contact-card-info">
                 <h3 class="contact-card-title">BBS Solitude Channel</h3>
                 <p class="contact-card-desc">Digital forum frequency handle:</p>
-                <span class="contact-card-link">bbs.lilychou-chou.ph/user/philia</span>
+                <span class="contact-card-link">lilyholic.net // alias: philia</span>
               </div>
             </article>
 
@@ -1044,9 +1250,9 @@
                 </svg>
               </div>
               <div class="contact-card-info">
-                <h3 class="contact-card-title">Location &amp; Availability</h3>
-                <p class="contact-card-desc">Tokyo &bull; Remote Worldwide</p>
-                <span class="contact-card-text">Available for select web &amp; audio projects</span>
+                <h3 class="contact-card-title">Location &amp; Transmission Range</h3>
+                <p class="contact-card-desc">Tokyo &bull; Global Ether Network</p>
+                <span class="contact-card-text">Accepting select web architecture &amp; audio projects</span>
               </div>
             </article>
           </div>
@@ -1054,19 +1260,23 @@
           <!-- Working Accessible Contact Form -->
           <div class="contact-form-container">
             <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-header-line">
+                <span class="form-packet-tag">PACKET UPLINK // PROTOCOL 2001</span>
+                <span class="form-status-tag">STATUS: ONLINE</span>
+              </div>
               <h3 class="form-title">Send a Transmission</h3>
 
               <!-- Name Field -->
               <div class="form-group">
                 <label for="contact-name" class="form-label">
-                  Your Name / Handle <span class="required-indicator" aria-hidden="true">*</span>
+                  Your Handle / Sender Name <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
                 <input 
                   type="text" 
                   id="contact-name" 
                   name="name" 
                   class="form-input" 
-                  placeholder="e.g. Yuichi / Philia" 
+                  placeholder="e.g. Yuichi / Blue Cat" 
                   required 
                   aria-required="true" 
                   autocomplete="name">
@@ -1076,7 +1286,7 @@
               <!-- Email Field -->
               <div class="form-group">
                 <label for="contact-email" class="form-label">
-                  Email Address <span class="required-indicator" aria-hidden="true">*</span>
+                  Return Network Address (Email) <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
                 <input 
                   type="email" 
@@ -1093,14 +1303,14 @@
               <!-- Subject / Topic Field -->
               <div class="form-group">
                 <label for="contact-topic" class="form-label">
-                  Inquiry Category <span class="required-indicator" aria-hidden="true">*</span>
+                  Transmission Frequency <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
                 <select id="contact-topic" name="topic" class="form-select" required aria-required="true">
                   <option value="" disabled selected>Select an inquiry frequency...</option>
-                  <option value="project">Creative Web Commission</option>
-                  <option value="audio">Sound Design &amp; Audio Engineering</option>
+                  <option value="project">Creative Web Architecture</option>
+                  <option value="audio">Ambient Sound Design &amp; Web Audio</option>
                   <option value="collab">Cinematography / Visual Collaboration</option>
-                  <option value="general">Ether Resonance / General Note</option>
+                  <option value="general">Ether Resonance / Solitude Note</option>
                 </select>
                 <span class="form-error-msg" id="topic-error" aria-live="assertive"></span>
               </div>
@@ -1108,7 +1318,7 @@
               <!-- Message Field -->
               <div class="form-group">
                 <label for="contact-message" class="form-label">
-                  Message / Transmission <span class="required-indicator" aria-hidden="true">*</span>
+                  Transmission Payload (Message) <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
                 <textarea 
                   id="contact-message" 
@@ -1138,11 +1348,8 @@
 
               <!-- Submit Button -->
               <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
-                <span>Dispatch Transmission</span>
-                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
+                <span>Dispatch Transmission [送信]</span>
+                <span class="btn-glyph" aria-hidden="true">&rarr;</span>
               </button>
 
               <!-- Dynamic Accessible Status Alert -->
