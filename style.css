@@ -194,6 +194,164 @@ body {
   overflow-x: hidden;
 }
 
+/* --------------------------------------------------------------------------
+   2001 Digicam & Lost Internet Archive Atmosphere Engine
+   Simulates 3-CCD sensor noise, early digital camcorder lens vignette,
+   interlaced CRT scanlines, and authentic timestamp telemetry.
+   -------------------------------------------------------------------------- */
+.film-grain-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9990;
+  background-image: 
+    /* 1. Procedural 3-CCD Fractal Noise */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    /* 2. CRT Interlaced Video Scanlines */
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    ),
+    /* 3. Digicam Optical Lens Vignette */
+    radial-gradient(
+      circle at center,
+      transparent 50%,
+      rgba(0, 0, 0, 0.28) 85%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+  opacity: 0.65;
+  mix-blend-mode: overlay;
+  transition: opacity var(--transition-normal);
+  will-change: opacity;
+}
+
+[data-theme="light"] .film-grain-overlay {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(73, 109, 41, 0.05) 2px,
+      rgba(73, 109, 41, 0.05) 4px
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 60%,
+      rgba(73, 109, 41, 0.15) 88%,
+      rgba(35, 55, 20, 0.4) 100%
+    );
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+}
+
+/* Subtle Chromatic Aberration Fringe (Optical Misalignment) */
+body.digicam-active h1,
+body.digicam-active h2,
+body.digicam-active h3,
+body.digicam-active .section-tag,
+body.digicam-active .bbs-typewriter-text {
+  text-shadow: 
+    0.4px 0 0.8px rgba(255, 60, 100, 0.28),
+    -0.4px 0 0.8px rgba(0, 210, 255, 0.28);
+}
+
+body.digicam-disabled .film-grain-overlay,
+body.digicam-disabled .digicam-hud {
+  display: none !important;
+}
+
+/* 2001 Digicam Viewfinder HUD Overlay */
+.digicam-hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9993;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.digicam-hud-top-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #e8eae0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  margin-top: 4.5rem; /* clears sticky navbar */
+}
+
+.digicam-rec {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.rec-dot {
+  animation: digicamRecBlink 1.2s infinite ease-in-out;
+}
+@keyframes digicamRecBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.digicam-speed,
+.digicam-battery {
+  color: #cbd5e1;
+  font-size: 0.62rem;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--radius-sm);
+}
+
+.digicam-hud-bottom-right {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  background: rgba(9, 13, 18, 0.65);
+  backdrop-filter: blur(4px);
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+[data-theme="light"] .digicam-hud-bottom-right {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(73, 109, 41, 0.2);
+}
+
+/* Authentic Camcorder Amber Date Timestamp */
+.digicam-timestamp {
+  color: #f59e0b; /* Authentic digital camcorder amber */
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 6px rgba(245, 158, 11, 0.5), 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+[data-theme="light"] .digicam-timestamp {
+  color: #b45309;
+  text-shadow: none;
+}
+
+.digicam-archive-tag {
+  color: var(--accent-primary);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
 .skip-link {
   position: absolute;
   top: -50px;
@@ -536,6 +694,52 @@ button {
   color: var(--text-primary);
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
+}
+
+/* 2001 Digicam & Lost Internet Archive Toggle Button */
+.digicam-toggle,
+.grain-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.65rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.digicam-toggle:hover,
+.digicam-toggle:focus-visible,
+.grain-toggle:hover,
+.grain-toggle:focus-visible {
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  outline: none;
+}
+
+.digicam-toggle[aria-pressed="true"],
+.grain-toggle[aria-pressed="true"] {
+  border-color: rgba(143, 168, 91, 0.45);
+  background: rgba(143, 168, 91, 0.12);
+}
+
+.digicam-status-dot,
+.grain-status-dot {
+  font-size: 0.55rem;
+  color: var(--accent-primary);
+  transition: color var(--transition-fast);
+}
+
+.digicam-toggle[aria-pressed="false"] .digicam-status-dot,
+.grain-toggle[aria-pressed="false"] .grain-status-dot {
+  color: var(--text-muted);
 }
 .hamburger-bar {
   display: block;

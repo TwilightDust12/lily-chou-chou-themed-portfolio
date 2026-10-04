@@ -21,6 +21,22 @@
   <script src="./script.js?v=2.0" defer></script>
 </head>
 <body>
+  <!-- Global 35mm CineAlta Film Grain / CCD Sensor Noise & Lens Vignette Overlay -->
+  <div class="film-grain-overlay" id="film-grain-overlay" aria-hidden="true"></div>
+
+  <!-- 2001 Digicam & Lost Internet Archive Viewfinder HUD -->
+  <aside class="digicam-hud" id="digicam-hud" aria-hidden="true">
+    <div class="digicam-hud-top-left">
+      <span class="digicam-rec"><span class="rec-dot">●</span> REC</span>
+      <span class="digicam-speed">SP 24P</span>
+      <span class="digicam-battery">[■■■□]</span>
+    </div>
+    <div class="digicam-hud-bottom-right">
+      <span class="digicam-timestamp" id="digicam-timestamp">AUG 31 2001 &bull; 16:44:02</span>
+      <span class="digicam-archive-tag">ARCHIVE // LILYHOLIC.NET RESTORED</span>
+    </div>
+  </aside>
+
   <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -91,6 +107,18 @@
             </svg>
           </span>
           <span class="sr-only">Toggle theme</span>
+        </button>
+
+        <!-- 2001 Digicam & Lost Internet Archive Filter Toggle -->
+        <button 
+          type="button" 
+          class="digicam-toggle grain-toggle" 
+          id="digicam-toggle" 
+          aria-label="Toggle 2001 Digicam & Lost Internet Archive Filter" 
+          aria-pressed="true" 
+          title="Toggle 2001 Digicam & Lost Internet Archive Filter (CCD noise, scanlines, lens vignette & timestamp)">
+          <span class="digicam-icon-tag" aria-hidden="true">DIGICAM</span>
+          <span class="digicam-status-dot" id="digicam-status-dot" aria-hidden="true">●</span>
         </button>
       </nav>
     </div>

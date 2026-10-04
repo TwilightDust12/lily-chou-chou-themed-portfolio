@@ -118,6 +118,64 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
+     2b. 2001 Digicam & Lost Internet Archive Filter Engine
+     Simulates Sony Cyber-shot / CineAlta 3-CCD sensor texture, optical lens
+     vignette, CRT scanlines, and authentic timestamp OSD telemetry.
+     ========================================================================== */
+  const digicamToggle = document.getElementById('digicam-toggle') || document.getElementById('grain-toggle');
+  const digicamTimestamp = document.getElementById('digicam-timestamp');
+  const savedDigicam = localStorage.getItem('ether-digicam') || localStorage.getItem('ether-grain');
+
+  const setDigicamState = (isEnabled) => {
+    if (isEnabled) {
+      document.body.classList.remove('digicam-disabled');
+      document.body.classList.add('digicam-active');
+      if (digicamToggle) {
+        digicamToggle.setAttribute('aria-pressed', 'true');
+        digicamToggle.setAttribute('title', '2001 Digicam Filter: Active (Click to disable)');
+      }
+    } else {
+      document.body.classList.add('digicam-disabled');
+      document.body.classList.remove('digicam-active');
+      if (digicamToggle) {
+        digicamToggle.setAttribute('aria-pressed', 'false');
+        digicamToggle.setAttribute('title', '2001 Digicam Filter: Disabled (Click to activate)');
+      }
+    }
+    localStorage.setItem('ether-digicam', isEnabled ? 'on' : 'off');
+  };
+
+  // Initial state application (defaults to enabled for authentic lost archive aesthetic)
+  if (savedDigicam === 'off') {
+    setDigicamState(false);
+  } else {
+    setDigicamState(true);
+  }
+
+  if (digicamToggle) {
+    digicamToggle.addEventListener('click', () => {
+      const isCurrentlyDisabled = document.body.classList.contains('digicam-disabled');
+      setDigicamState(isCurrentlyDisabled);
+      if (typeof playMechanicalSound === 'function') {
+        playMechanicalSound('seek');
+      }
+    });
+  }
+
+  // Live 2001 Camcorder Date Timestamp Ticker (Canonical August 31, 2001 date)
+  if (digicamTimestamp) {
+    const updateCamTimestamp = () => {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      digicamTimestamp.innerHTML = `AUG 31 2001 &bull; ${h}:${m}:${s}`;
+    };
+    updateCamTimestamp();
+    setInterval(updateCamTimestamp, 1000);
+  }
+
+  /* ==========================================================================
      3. Cinematic Horizon / Scenery Switcher
      Supports backgrounds 1, 2, 3, 4, and 5 with persistence & live updates
      ========================================================================== */
