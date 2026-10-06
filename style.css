@@ -54,11 +54,18 @@
   --font-body: 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'Space Mono', 'Courier Prime', Consolas, monospace;
 
-  /* Transitions */
-  --transition-fast: 0.18s ease;
-  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-theme: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Motion & Transition Tokens (Emil Kowalski Craft Standard) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 240ms;
+  --duration-slow: 380ms;
+
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-normal: var(--duration-normal) var(--ease-out);
+  --transition-slow: var(--duration-slow) var(--ease-out);
+  --transition-theme: 220ms var(--ease-out);
 
   /* Elevation Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -123,18 +130,30 @@
    2. Smooth Theme Transition Engine
    -------------------------------------------------------------------------- */
 .theme-in-transition,
-.theme-in-transition *,
-.theme-in-transition *::before,
-.theme-in-transition *::after {
+.theme-in-transition body,
+.theme-in-transition .site-header,
+.theme-in-transition .hero-section,
+.theme-in-transition .about-section,
+.theme-in-transition .skills-section,
+.theme-in-transition .projects-section,
+.theme-in-transition .interactive-section,
+.theme-in-transition .contact-section,
+.theme-in-transition .site-footer,
+.theme-in-transition .bio-narrative-card,
+.theme-in-transition .pillar-card,
+.theme-in-transition .skill-card,
+.theme-in-transition .project-card,
+.theme-in-transition .interactive-card,
+.theme-in-transition .player-console,
+.theme-in-transition .contact-card,
+.theme-in-transition .contact-form-container,
+.theme-in-transition .modal-dialog,
+.theme-in-transition .scene-study-card,
+.theme-in-transition .archival-poster-badge {
   transition: background-color var(--transition-theme),
-              background-image var(--transition-theme),
-              color var(--transition-theme),
               border-color var(--transition-theme),
-              fill var(--transition-theme),
-              stroke var(--transition-theme),
-              box-shadow var(--transition-theme),
-              filter var(--transition-theme),
-              opacity var(--transition-theme) !important;
+              color var(--transition-theme),
+              box-shadow var(--transition-theme) !important;
   transition-delay: 0s !important;
 }
 
@@ -162,10 +181,10 @@ body,
 .scene-study-card,
 .archival-poster-badge,
 .scenery-pill {
-  transition: background-color var(--transition-normal),
-              border-color var(--transition-normal),
-              color var(--transition-normal),
-              box-shadow var(--transition-normal);
+  transition: background-color var(--transition-theme),
+              border-color var(--transition-theme),
+              color var(--transition-theme),
+              box-shadow var(--transition-theme);
 }
 
 /* --------------------------------------------------------------------------
@@ -368,19 +387,20 @@ body.digicam-disabled .digicam-hud {
 
 .skip-link {
   position: absolute;
-  top: -50px;
+  top: 16px;
   left: 16px;
+  transform: translateY(-160%);
   background: var(--accent-primary);
   color: #070c18;
   padding: 8px 16px;
   font-weight: 600;
   z-index: 9999;
   border-radius: var(--radius-sm);
-  transition: top var(--transition-fast);
+  transition: transform var(--duration-fast) var(--ease-out);
   text-decoration: none;
 }
 .skip-link:focus {
-  top: 16px;
+  transform: translateY(0);
   outline: 3px solid #ffffff;
 }
 
@@ -471,9 +491,17 @@ button {
   font-size: 0.95rem;
   padding: 0.75rem 1.6rem;
   border-radius: var(--radius-sm);
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
   text-decoration: none;
   cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.97) translateY(0);
+  transition-duration: 90ms;
 }
 
 .btn-sm {
@@ -657,7 +685,11 @@ button {
   background: var(--bg-secondary);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
 }
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
@@ -681,8 +713,8 @@ button {
 
 .theme-icon {
   position: absolute;
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-              opacity 0.35s ease;
+  transition: transform 200ms var(--ease-out),
+              opacity 160ms var(--ease-out);
 }
 
 :not([data-theme="light"]) .sun-icon {
@@ -692,12 +724,12 @@ button {
   filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.6));
 }
 :not([data-theme="light"]) .moon-icon {
-  transform: rotate(-90deg) scale(0.3);
+  transform: rotate(-45deg) scale(0.85);
   opacity: 0;
 }
 
 [data-theme="light"] .sun-icon {
-  transform: rotate(90deg) scale(0.3);
+  transform: rotate(45deg) scale(0.85);
   opacity: 0;
 }
 [data-theme="light"] .moon-icon {
@@ -735,8 +767,14 @@ button {
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
+}
+.digicam-toggle:active,
+.grain-toggle:active {
+  transform: scale(0.96);
 }
 
 .digicam-toggle:hover,
@@ -1044,9 +1082,14 @@ button {
   color: var(--text-secondary);
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 500;
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
   cursor: pointer;
+}
+.scenery-pill:active {
+  transform: scale(0.96);
 }
 .scenery-pill:hover,
 .scenery-pill:focus-visible {
@@ -1334,9 +1377,13 @@ button {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   padding: 0.25rem 0.55rem;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
   cursor: pointer;
+}
+.btn-ticker-nav:active {
+  transform: scale(0.95);
 }
 .btn-ticker-nav:hover {
   color: var(--accent-primary);
@@ -1420,7 +1467,9 @@ button {
   border: 1px solid var(--bg-card-border);
   border-radius: var(--radius-md);
   margin-top: 1.5rem;
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
 }
 .archival-poster-badge:hover {
   border-color: var(--accent-primary);
@@ -1477,8 +1526,9 @@ button {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  backdrop-filter: blur(10px);
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
 }
 .scene-study-card:hover {
   border-color: var(--accent-primary);
@@ -1562,7 +1612,9 @@ button {
   align-items: flex-start;
   gap: 1.25rem;
   backdrop-filter: blur(10px);
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              background-color var(--duration-normal) var(--ease-out);
 }
 .pillar-card:hover {
   background: var(--bg-card-hover);
@@ -1617,7 +1669,9 @@ button {
   padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
 }
 .skill-card:hover {
   border-color: var(--accent-primary);
@@ -1713,7 +1767,10 @@ button {
   display: flex;
   gap: 1rem;
   backdrop-filter: blur(8px);
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out),
+              background-color var(--duration-normal) var(--ease-out);
   position: relative;
 }
 .project-card.bbs-thread-card:hover {
@@ -1878,7 +1935,13 @@ button {
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   font-weight: 500;
-  transition: all var(--transition-fast);
+  transition: background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
+}
+.filter-btn:active {
+  transform: scale(0.96);
 }
 .filter-btn:hover,
 .filter-btn:focus-visible {
@@ -1904,7 +1967,9 @@ button {
   border: 1px solid var(--bg-card-border);
   border-radius: var(--radius-md);
   padding: 1.6rem;
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
   display: flex;
   flex-direction: column;
 }
@@ -2018,7 +2083,9 @@ button {
   width: 100%;
   box-shadow: var(--shadow-lg), 0 0 35px rgba(0, 0, 0, 0.85);
   position: relative;
-  transition: all var(--transition-normal);
+  transition: border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out),
+              background-color var(--duration-normal) var(--ease-out);
 }
 [data-theme="light"] .player-console.discman-unit {
   background: #fbfcf7;
@@ -2082,9 +2149,14 @@ button {
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
+}
+.btn-discman-eject:active {
+  transform: scale(0.96);
 }
 .btn-discman-eject:hover {
   background: var(--accent-primary);
@@ -2175,9 +2247,14 @@ button {
   font-size: 0.68rem;
   font-weight: 600;
   padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
+}
+.viewport-tab:active {
+  transform: scale(0.96);
 }
 .viewport-tab:hover {
   color: var(--text-primary);
@@ -2227,15 +2304,16 @@ button {
 .optical-laser-head {
   position: absolute;
   top: 50%;
-  left: 20%;
-  transform: translateY(-50%);
+  left: 0;
+  transform: translate3d(var(--sled-pos, 20%), -50%, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
   z-index: 1;
   pointer-events: none;
-  transition: left 0.4s ease;
+  transition: transform 240ms var(--ease-out);
+  will-change: transform;
 }
 .laser-lens-diode {
   width: 10px;
@@ -2536,10 +2614,13 @@ button {
 
 .vis-bar {
   width: 6px;
-  height: 6px;
+  height: 42px;
   background: var(--accent-primary);
   border-radius: 1px;
-  transition: height 0.08s ease;
+  transform-origin: bottom;
+  transform: scaleY(0.14);
+  transition: transform 80ms linear;
+  will-change: transform;
   opacity: 0.5;
 }
 .player-console.playing .vis-bar {
@@ -2567,9 +2648,15 @@ button {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
   cursor: pointer;
+}
+.ctrl-btn:active {
+  transform: scale(0.95);
+  transition-duration: 80ms;
 }
 .ctrl-btn:hover,
 .ctrl-btn:focus-visible {
@@ -2711,8 +2798,13 @@ button {
   flex-direction: column;
   gap: 0.2rem;
   text-align: left;
-  cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: transform var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+.jewel-case:active {
+  transform: scale(0.97) translateY(0);
 }
 .jewel-case:hover {
   border-color: var(--accent-primary);
@@ -2859,7 +2951,9 @@ button {
   align-items: flex-start;
   gap: 1.25rem;
   backdrop-filter: blur(10px);
-  transition: all var(--transition-normal);
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
 }
 .contact-card:hover {
   border-color: var(--accent-primary);
@@ -2975,7 +3069,9 @@ button {
   color: var(--text-primary);
   font-family: var(--font-mono);
   font-size: 0.88rem;
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              outline-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
 }
 .form-input:focus,
 .form-select:focus,
@@ -3146,7 +3242,12 @@ button {
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.08);
   color: #cbd5e1;
-  transition: all var(--transition-fast);
+  transition: transform var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+}
+.social-btn:active {
+  transform: scale(0.94) translateY(0);
 }
 .social-btn:hover,
 .social-btn:focus-visible {
@@ -3180,7 +3281,12 @@ button {
   padding: 0.4rem 0.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all var(--transition-fast);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform 100ms var(--ease-out);
+}
+.back-to-top-btn:active {
+  transform: scale(0.96);
 }
 .back-to-top-btn:hover,
 .back-to-top-btn:focus-visible {
@@ -3203,11 +3309,14 @@ button {
   z-index: 2000;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-normal);
+  transition: opacity 220ms var(--ease-out),
+              visibility 0s linear 220ms;
 }
 .modal-backdrop.is-open {
   opacity: 1;
   visibility: visible;
+  transition: opacity 220ms var(--ease-out),
+              visibility 0s linear 0s;
 }
 
 .modal-dialog {
@@ -3219,11 +3328,14 @@ button {
   max-height: 85vh;
   overflow-y: auto;
   box-shadow: var(--shadow-lg), var(--shadow-glow);
-  transform: translateY(20px) scale(0.97);
-  transition: transform var(--transition-normal);
+  transform: translateY(14px) scale(0.97);
+  opacity: 0.8;
+  transition: transform 240ms var(--ease-out),
+              opacity 240ms var(--ease-out);
 }
 .modal-backdrop.is-open .modal-dialog {
   transform: translateY(0) scale(1);
+  opacity: 1;
 }
 
 .modal-header {
@@ -3353,16 +3465,21 @@ button {
     flex-direction: column;
     align-items: stretch;
     gap: 1.25rem;
-    transform: translateY(-120%);
+    transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition-normal);
+    transition: transform 260ms var(--ease-drawer),
+                opacity 200ms var(--ease-out),
+                visibility 0s linear 260ms;
     box-shadow: var(--shadow-lg);
   }
   .primary-nav.nav-open {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    transition: transform 260ms var(--ease-drawer),
+                opacity 200ms var(--ease-out),
+                visibility 0s linear 0s;
   }
 
   .nav-list {
@@ -3414,5 +3531,73 @@ button {
 
   .contact-form-container {
     padding: 1.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. Motion Accessibility & Reduced Motion Preferences
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Retain gentle opacity transitions for functional clarity */
+  .hud-rec-dot,
+  .terminal-cursor,
+  .vis-bar,
+  .btn,
+  .modal-dialog,
+  .primary-nav,
+  .theme-icon,
+  .optical-laser-head {
+    transition: opacity 150ms ease, background-color 150ms ease, color 150ms ease !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Discman & audio indicators: static active states */
+  .compact-disc.spinning {
+    animation: none !important;
+    box-shadow: 0 0 15px var(--accent-glow), inset 0 0 4px var(--accent-primary) !important;
+  }
+
+  .player-console.playing .laser-lens-diode {
+    animation: none !important;
+    opacity: 1 !important;
+    background: #ef4444 !important;
+  }
+
+  .player-console.playing .discman-disc-spinning-icon {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .modal-backdrop.is-open .modal-dialog {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Touch & Pointer Interaction Polish: Hover Isolation */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-outline:hover,
+  .pillar-card:hover,
+  .skill-card:hover,
+  .project-card:hover,
+  .contact-card:hover,
+  .scene-study-card:hover,
+  .interactive-card:hover,
+  .jewel-case:hover,
+  .social-btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
 }

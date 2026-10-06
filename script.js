@@ -581,14 +581,14 @@ document.addEventListener('DOMContentLoaded', () => {
           const barStep = Math.max(1, Math.floor(bufferLength / visBars.length));
           visBars.forEach((bar, idx) => {
             const val = freqData[idx * barStep] || 0;
-            const targetH = Math.max(5, Math.round((val / 255) * 36));
-            bar.style.height = `${targetH}px`;
+            const targetScale = Math.max(0.14, val / 255);
+            bar.style.transform = `scaleY(${targetScale.toFixed(3)})`;
             bar.style.backgroundColor = activeColor;
             bar.style.boxShadow = `0 0 6px ${activeColor}`;
           });
         } else {
           visBars.forEach(bar => {
-            bar.style.height = '6px';
+            bar.style.transform = 'scaleY(0.14)';
             bar.style.backgroundColor = '';
             bar.style.boxShadow = '';
           });
@@ -631,7 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (laserHead) {
       const progress = track.duration > 0 ? (currentSeconds / track.duration) : 0;
       const sledPos = 16 + (progress * 26);
-      laserHead.style.left = `${sledPos}%`;
+      laserHead.style.setProperty('--sled-pos', `${sledPos}%`);
     }
   };
 
@@ -811,7 +811,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       currentSeconds = 0;
       updatePlayerDisplay();
-      if (laserHead) laserHead.style.left = '16%';
+      if (laserHead) laserHead.style.setProperty('--sled-pos', '16%');
       if (physicalCompactDisc) physicalCompactDisc.classList.remove('spinning');
       if (playerStatusText) {
         playerStatusText.textContent = 'DISC STOPPED: READY';
